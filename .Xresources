@@ -1,25 +1,25 @@
-! blk
-#define c00 #000000
-#define c08 #4D4D4D
 ! wht
+#define c00 #FFFFFF
+#define c08 #4D4D4D
+! red
 #define c01 #FF5555
 #define c09 #000000
-! red
+! grn
 #define c02 #50FA7B
 #define c10 #5AF78E
 ! yel
 #define c03 #F1FA8C
 #define c11 #F4F99D
-! grn
+! blu
 #define c04 #BD93F9
 #define c12 #CAA9FA
-! cyn
+! mag
 #define c05 #FF79C6
 #define c13 #FF92D0
-! blu
+! cya
 #define c06 #8BE9FD
 #define c14 #9AEDFE
-! mag
+! blk
 #define c07 #BFBFBF
 #define c15 #E6E6E6
 

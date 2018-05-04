@@ -3,7 +3,7 @@ URxvt.depth: 32
 URxvt*font: xft:Gohu Gohufont:antialias=false
 URxvt*letterSpace: 0 
 URxvt*internalBorder: 12 
-URxvt*foreground: #F8F8F2
+URxvt*foreground:  c00
 URxvt*background: #282A36
 URxvt*color0:      c00
 URxvt*color8:      c08

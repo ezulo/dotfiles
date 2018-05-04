@@ -173,11 +173,18 @@ bar {
 
 # Aesthetics
 ### Wallpaper
-exec feh --bg-scale $HOME/Pictures/Wallpapers/mgs1.jpg
+exec feh --bg-scale $HOME/Pictures/Wallpapers/mount.jpg
 ### Gaps
 gaps inner 14
 gaps outer 0
 ### Disable titlebar
 for_window [class="^.*"] border pixel 4
-
+### Focus colors
+# class                 border  backgr. text    indicator child_border
+client.focused          #4c7899 #f9f2cc #ffffff #f9f2cc   #f9f2cc
+client.focused_inactive #333333 #5f676a #ffffff #5f676a   #5f676a
+client.unfocused        #333333 #222222 #888888 #222222   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #0c0c0c   #0c0c0c
 # Below reserved for compositors, etc
+exec --no-startup-id compton --config $HOME/.config/compton/compton.conf
