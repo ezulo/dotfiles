@@ -5,7 +5,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-PS1='\u@\h \W\$ '
+PS1='\[\e[1;37m\]\u@\h \W\$ \[\e[m\]'
 # >>> Added by cnchi installer
 EDITOR=/usr/bin/nano
 

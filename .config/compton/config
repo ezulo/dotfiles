@@ -64,18 +64,19 @@ no-dock-shadow = true;
 # Zero the part of the shadow's mask behind the window. Fix some weirdness with ARGB windows.
 clear-shadow = true;
 # The blur radius for shadows. (default 12)
-shadow-radius = 5;
+shadow-radius = 8; 
+# For centered shadows: offset is radius * -1.5
 # The left offset for shadows. (default -15)
-shadow-offset-x = -5;
+shadow-offset-x = -12;
 # The top offset for shadows. (default -15)
-shadow-offset-y = -5;
+shadow-offset-y = -12; 
 # The translucency for shadows. (default .75)
 shadow-opacity = 0.5;
 
 # Set if you want different colour shadows
-# shadow-red = 0.0;
-# shadow-green = 0.0;
-# shadow-blue = 0.0;
+shadow-red = 1.0;
+shadow-green = 1.0;
+shadow-blue = 1.0;
 
 # The shadow exclude options are helpful if you have shadows enabled. Due to the way compton draws its shadows, certain applications will have visual glitches
 # (most applications are fine, only apps that do weird things with xshapes or argb are affected).

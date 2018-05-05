@@ -1,0 +1,32 @@
+! BLACK
+#define c00 #282A36
+! GRAY
+#define c08 #6D6D6D
+! LIGHT GRAY
+#define c07 #E6E6E6
+! RED
+#define c01 #FF5555
+! LIGHT RED
+#define c09 #FF9292
+! GREEN
+#define c02 #50FA7B
+! LIGHT GREEN
+#define c10 #5AF78E
+! YELLOW
+#define c03 #F1FA8C
+! LIGHT YELLLOW 
+#define c11 #F4F99D
+! BLUE
+#define c04 #BD93F9
+! LIGHT BLUE
+#define c12 #CAA9FA
+! MAGENTA
+#define c05 #FF79C6
+! LIGHT MAGENTA
+#define c13 #FF92D0
+! CYAN 
+#define c06 #8BE9FD
+! LIGHT CYAN
+#define c14 #9AEDFE
+! WHITE
+#define c15 #DDDDDD

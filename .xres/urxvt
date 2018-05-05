@@ -1,10 +1,11 @@
 URxvt.scrollBar: false
 URxvt.depth: 32
 URxvt*font: xft:Gohu Gohufont:antialias=false
-URxvt*letterSpace: 0 
-URxvt*internalBorder: 12 
-URxvt*foreground:  c00
-URxvt*background: #282A36
+URxvt*letterSpace: 0
+URxvt*internalBorder: 12
+URxvt*foreground:  c15
+URxvt*background:  c00
+URxvt*opacity: 0.8
 URxvt*color0:      c00
 URxvt*color8:      c08
 URxvt*color1:      c01
