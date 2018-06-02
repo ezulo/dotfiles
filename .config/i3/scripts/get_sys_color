@@ -1,0 +1,15 @@
+#!/bin/bash
+
+color_file="$HOME/.xres/colors"
+color=`echo "$1" | tr /a-z/ /A-Z/`
+
+# color can refer to number...check if true
+if [[ $color =~ ^-?[0-9]+$ ]] 
+then
+  color=`printf "%02d" $color`
+  line=`cat $color_file | grep "c$color"`
+else
+  line=`cat $color_file | grep -A1 "$color" | grep -v "$color"`
+fi
+
+echo $line | perl -nE '/#.*(#.*)/ && say $1'

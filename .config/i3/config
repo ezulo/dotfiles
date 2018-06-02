@@ -2,12 +2,15 @@
 # It will not be overwritten, so edit it as you like.
 #
 # Should you change your keyboard layout some time, delete
-# this file and re-run i3-config-wizard(1).
-#
-
+# this file and re-run i3-config-wizard(1).  # 
 # i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
+
+# Get system colors (for stuff defined in i3 directly)
+# Literals are temporary until I can figure out how to add them dynamically...
+set $color_black #282A36
+set $color_white #DDDDDD
 
 set $mod Mod4
 
@@ -37,7 +40,10 @@ bindsym $mod+Return exec urxvt
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+# bindsym $mod+d exec dmenu_run -fn "Gohu Gohufont" 
+bindsym $mod+d exec rofi -show
+
+
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -131,8 +137,8 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
 # volume control 
-bindsym XF86AudioRaiseVolume exec --no-startup-id $HOME/.config/i3/scripts/inc_volume 5
-bindsym XF86AudioLowerVolume exec --no-startup-id $HOME/.config/i3/scripts/inc_volume -5
+bindsym XF86AudioRaiseVolume exec --no-startup-id $HOME/.config/i3/scripts/inc_volume 10
+bindsym XF86AudioLowerVolume exec --no-startup-id $HOME/.config/i3/scripts/inc_volume -10
 
 # backlight control
 bindsym XF86MonBrightnessUp   exec xbacklight -inc 10
@@ -172,6 +178,8 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+bindsym $mod+o exec scrot
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 #bar {
@@ -181,12 +189,12 @@ bindsym $mod+r mode "resize"
 
 # Aesthetics
 ### Wallpaper
-exec feh --bg-scale $HOME/Pictures/Wallpapers/mount.jpg
+exec feh --bg-scale $HOME/Pictures/Wallpapers/whiteocean.jpg
 ### Gaps
 gaps inner 14
 gaps outer 0
 ### Disable titlebar
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 3
 ### Focus colors
 # class                 border  backgr. text    indicator child_border
 client.focused          #4c7899 #f9f2cc #ffffff #f9f2cc   #f9f2cc

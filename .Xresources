@@ -16,5 +16,6 @@
 *color7:     c07
 *color15:    c15
 
+#include "/home/eduardo/.xres/rofi"
 #include "/home/eduardo/.xres/urxvt"
 #include "/home/eduardo/.xres/xft"

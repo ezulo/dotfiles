@@ -37,7 +37,7 @@ alert =             ${colors.red}
 monitor = "eDP1"
 width = 100%
 height = 27
-fixed-center = false
+fixed-center = true
 background = ${colors.background}
 foreground = ${colors.foreground}
 line-size = 3
@@ -52,10 +52,11 @@ module-margin-right = 2
 ;font-0 = fixed:pixelsize=10;1
 font-0 = Gohu Gohufont:size=14;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = Wuncon Siji:pixelsize=15;1
-modules-left = i3
-modules-center = 
-modules-right = filesystem xbacklight pulseaudio memory cpu wlan eth battery temperature date powermenu
+font-2 = Wuncon Siji;1
+modules-left = title
+modules-center = i3
+;modules-right = xbacklight pulseaudio memory cpu wlan eth battery temperature date
+modules-right = wlan eth pulseaudio battery0 battery1 temperature date
 tray-position = right
 tray-padding = 2
 ;tray-transparent = true
@@ -114,6 +115,12 @@ label-urgent-padding = 2
 ; Separator in between workspaces
 ; label-separator = |
 
+[module/title]
+type = internal/xwindow
+format = <label>
+format-padding = 2
+label = %title%
+label-maxlen = 20
 
 [module/mpd]
 type = internal/mpd
@@ -129,10 +136,10 @@ label-song-ellipsis = true
 [module/xbacklight]
 type = internal/xbacklight
 format = <label> <bar>
-label = BL
-bar-width = 5
-bar-indicator = |
-bar-indicator-foreground = #ff
+label = 
+bar-width = 10
+bar-indicator =  
+bar-indicator-foreground = #9f78e1
 bar-indicator-font = 2
 bar-fill = -
 bar-fill-font = 2
@@ -211,20 +218,22 @@ label = %date% %time%
 type = internal/pulseaudio
 sink = 0
 format-volume = <label-volume> <bar-volume>
-label-volume = VOL %percentage%%
+label-volume = 
+;%percentage%%
+label-volume-empty = 
 label-volume-foreground = ${root.foreground}
 label-muted = 🔇 muted
 label-muted-foreground = #66
 bar-volume-width = 5
 bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
+;bar-volume-foreground-1 = #55aa55
+;bar-volume-foreground-2 = #55aa55
+;bar-volume-foreground-3 = #55aa55
+;bar-volume-foreground-4 = #55aa55
+;bar-volume-foreground-5 = #f5a70a
+;bar-volume-foreground-6 = #ff5555
 bar-volume-gradient = false
-bar-volume-indicator = |
+bar-volume-indicator = 
 bar-volume-indicator-font = 2
 bar-volume-fill = -
 bar-volume-fill-font = 2
@@ -232,13 +241,35 @@ bar-volume-empty = -
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
-[module/battery]
+[module/battery0]
 type = internal/battery
 battery = BAT0
 adapter = AC
 full-at = 98
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = ${colors.yellow}
+format-charging-underline = ${colors.blue}
+format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-underline = ${colors.gray}
+format-full-prefix = " "
+format-full-prefix-foreground = ${colors.green}
+format-full-underline = ${self.format-charging-underline}
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-foreground = ${colors.foreground-alt}
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-foreground = ${colors.foreground-alt}
+animation-charging-framerate = 750
+
+[module/battery1]
+type = internal/battery
+battery = BAT1
+adapter = AC
+full-at = 98
+format-charging = <animation-charging> <label-charging>
+format-charging-underline = ${colors.blue}
 format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-underline = ${colors.gray}
 format-full-prefix = " "
@@ -259,7 +290,7 @@ type = internal/temperature
 thermal-zone = 0
 warn-temperature = 60
 format = <ramp> <label>
-format-underline = ${colors.red}
+format-underline = ${colors.blue}
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 label = %temperature-c%
