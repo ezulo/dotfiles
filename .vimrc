@@ -16,6 +16,9 @@ Plugin 'VundleVim/Vundle.vim'
 "     Plugin 'file:///home/path/to/plugin'
 Plugin 'mattn/emmet-vim'
 Plugin 'Lokaltog/vim-powerline'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 filetype plugin indent on
@@ -28,6 +31,10 @@ set backspace=2
 set laststatus=2
 set t_Co=256
 
+" HTTP
 let g:user_emmet_settings = {
 \    'indentation' : '  '
 \}
+
+" C++
+

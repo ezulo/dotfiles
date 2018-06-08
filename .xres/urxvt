@@ -1,7 +1,7 @@
 URxvt.scrollBar: false
 URxvt.depth: 32
-URxvt*font: xft:Gohu Gohufont:antialias=false
-URxvt*letterSpace: 0
+URxvt*font: xft:Hack:style=Regular:size=9
+URxvt*letterSpace: -1
 URxvt*internalBorder: 12
 URxvt*foreground:  c15
 URxvt*background:  c00
