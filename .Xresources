@@ -18,4 +18,5 @@
 
 #include "/home/eduardo/.xres/rofi"
 #include "/home/eduardo/.xres/urxvt"
+#include "/home/eduardo/.xres/xterm"
 #include "/home/eduardo/.xres/xft"

@@ -1,32 +1,32 @@
 !BLACK
-#define c00 #282A36
+#define c00 #000000
 !GRAY
-#define c08 #6D6D6D
+#define c08 #67686a
 !LIGHTGRAY
-#define c07 #E6E6E6
+#define c07 #c0c5ce
 !RED
-#define c01 #FF5555
+#define c01 #c54d58
 !LIGHTRED
-#define c09 #FF9292
+#define c09 #b98085
 !GREEN
-#define c02 #50FA7B
+#define c02 #60bf73
 !LIGHTGREEN
-#define c10 #5AF78E
+#define c10 #a3be8c
 !YELLOW
-#define c03 #F1FA8C
+#define c03 #d1a243
 !LIGHTYELLLOW 
-#define c11 #F4F99D
+#define c11 #ebcb8b
 !BLUE
-#define c04 #BD93F9
+#define c04 #60aefc
 !LIGHTBLUE
-#define c12 #CAA9FA
+#define c12 #a6cef6
 !MAGENTA
-#define c05 #FF79C6
+#define c05 #cf66bc
 !LIGHTMAGENTA
-#define c13 #FF92D0
+#define c13 #b48ead
 !CYAN 
-#define c06 #8BE9FD
+#define c06 #31e3dd
 !LIGHT CYAN
-#define c14 #9AEDFE
+#define c14 #73dcd8
 !WHITE
-#define c15 #DDDDDD
+#define c15 #ffffeb

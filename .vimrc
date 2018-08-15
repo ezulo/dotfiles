@@ -15,26 +15,41 @@ Plugin 'VundleVim/Vundle.vim'
 "   Git repos on local machine:
 "     Plugin 'file:///home/path/to/plugin'
 Plugin 'mattn/emmet-vim'
+Plugin '2072/PHP-Indenting-for-VIm'
+Plugin 'StanAngeloff/php.vim'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'scrooloose/nerdtree'
+Plugin 'ivalkeen/nerdtree-execute'
 Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
-filetype plugin indent on
 
 syntax on
 set number
 set relativenumber
+set shiftwidth=4
 set tabstop=4
 set backspace=2
 set laststatus=2
 set t_Co=256
+set colorcolumn=80
 
-" HTTP
 let g:user_emmet_settings = {
 \    'indentation' : '  '
 \}
 
-" C++
+" Plaintext
+autocmd Filetype text set autoindent
 
+" Indent
+filetype plugin indent on
+
+" NerdTree
+let g:NERDTreeQuitOnOpen = 0
+noremap <F2> :NERDTree<CR>
+
+" Other mappings
+inoremap <c-s> <ESC>:w<CR>
+noremap <c-s> :w<CR>
+noremap <c-q> :q<CR>
