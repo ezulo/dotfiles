@@ -120,7 +120,7 @@ type = internal/xwindow
 format = <label>
 format-padding = 2
 label = %title%
-label-maxlen = 20
+label-maxlen = 80
 
 [module/mpd]
 type = internal/mpd
