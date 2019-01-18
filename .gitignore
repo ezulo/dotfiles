@@ -8,6 +8,7 @@
 .config/qBittorrent/
 .config/Signal/
 .config/systemd/
+.scripts/sync_ftp
 .vim/bundle/
 .viminfo
 .SoulseekQt/
