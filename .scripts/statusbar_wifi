@@ -1,0 +1,7 @@
+#!/bin/bash
+
+INTERFACE="wlp3s0"
+NETWORK=`iwconfig $INTERFACE | grep -oP "ESSID:\K(.*)" | sed -e 's/\"//g'`;
+
+echo $NETWORK
+

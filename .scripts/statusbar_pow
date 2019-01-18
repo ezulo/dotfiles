@@ -1,0 +1,18 @@
+#!/bin/bash
+
+#BATICONS=("" "" "" "" "")
+BATICONS=("" "" "" "" "" "" "" "" "" "")
+CHARGING=""
+
+get_bat_index() {
+	echo $((($1/10)))
+}
+
+RAW=`acpi | grep -oP "([0-9]+%)" | grep -oP "[0-9]+" | tr '\r\n' ' '`
+BAT0=`echo "$RAW" | awk '{print $1}'`
+BAT1=`echo "$RAW" | awk '{print $2}'`
+
+INDEX0=`get_bat_index $BAT0`
+INDEX1=`get_bat_index $BAT1`
+
+echo "0 ${BATICONS[$INDEX0]} 1 ${BATICONS[$INDEX1]}"

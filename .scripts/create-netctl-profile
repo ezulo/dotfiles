@@ -1,0 +1,38 @@
+#!/bin/bash
+
+name="$1";
+cwd=$(pwd);
+
+if [ -z "$name" ] 
+then
+	echo "Name of profile required";
+	echo 'proper usage: ~$ create-netctl-profile "<name>"';
+	exit 1;
+fi
+
+TMP=/tmp/netctltemplate
+if [ -f "$TMP" ]
+then
+	rm "$TMP";
+fi
+
+echo "Connection=wireless" >> $TMP;
+echo "" >> $TMP;
+echo "Security=wpa" >> $TMP;
+echo "IP=dhcp" >> $TMP;
+echo "" >> $TMP;
+echo "ESSID=''" >> $TMP;
+echo "Key=''" >> $TMP;
+echo "" >> $TMP;
+echo "# Uncomment below if ssid is hidden" >> $TMP
+echo "#Hidden=yes" >> $TMP
+echo "" >> $TMP;
+echo "# Set priority for auto profile selection" >> $TMP
+echo "#Priority=10" >> $TMP
+
+vim $TMP;
+
+echo "Password required to install profile:";
+sudo cp $TMP /etc/netctl/$name;
+echo "Profile creation complete.";
+echo "Start with: ~$ netctl start $name";

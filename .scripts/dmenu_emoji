@@ -1,0 +1,17 @@
+#!/bin/bash
+
+window=$(xdotool getactivewindow)
+
+set -- junk $(cat ~/.config/emoji | cut -d '|' -f 1 | dmenu_wrapper Emoji)
+
+shift
+
+if [ $# -eq 0 ]; then
+    exit
+fi
+
+emoji=$(cat ~/.config/emoji | grep "^$(echo $@)|" | cut -d '|' -f 2 | tr -s '\r')
+
+echo -n "$emoji" | xclip -selection clipboard
+
+xdotool windowactivate $window

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+dmenu -fn "Dina:style=Regular:size=12" -sb "#e8eaef" -sf "#202029" -i -b -p "$*" 

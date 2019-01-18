@@ -1,0 +1,33 @@
+#!/bin/bash
+
+#RED=`tput setaf 1`
+#GREEN=`tput setaf 2`
+#RESET=`tput sgr0`
+
+DLM=" | ";
+while true
+do
+	sleep 1
+	# DISPLAY BATTERY
+	BAT=`statusbar_pow`
+	FINAL="$BAT"
+
+	# DISPLAY AUDIO
+	AUDIO=`statusbar_audio`
+	FINAL="$FINAL$DLM$AUDIO"
+
+	# DISPLAY WIFI
+	WIFI=`statusbar_wifi`
+	if [[ $WIFI != *"off/any" ]]
+	then
+		FINAL=`echo $FINAL$DLM${GREEN} ${RESET}$WIFI`;
+	fi
+
+	# DISPLAY DATE/TIME
+	TIME=`statusbar_time`
+	FINAL=`echo $FINAL$DLM$TIME`
+
+	# PRINT
+	xsetroot -name " $FINAL"
+done
+

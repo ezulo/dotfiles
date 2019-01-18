@@ -1,0 +1,32 @@
+!BLACK
+#define c00 #202029
+!GRAY
+#define c08 #202029
+!LIGHTGRAY
+#define c07 #c0c5ce
+!RED
+#define c01 #ffa2b1
+!LIGHTRED
+#define c09 #ffa2b1
+!GREEN
+#define c02 #baffd9
+!LIGHTGREEN
+#define c10 #baffd9
+!YELLOW
+#define c03 #fcfcb1
+!LIGHTYELLLOW 
+#define c11 #fcfcb1
+!BLUE
+#define c04 #aeb1ff
+!LIGHTBLUE
+#define c12 #aeb1ff
+!MAGENTA
+#define c05 #ffbdf1
+!LIGHTMAGENTA
+#define c13 #ffbdf1
+!CYAN 
+#define c06 #87d2ff
+!LIGHT CYAN
+#define c14 #87d2ff
+!WHITE
+#define c15 #e8eaef

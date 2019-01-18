@@ -1,0 +1,42 @@
+#!/bin/bash
+
+OPTIONS='Cancel\nLock\nLogout\nReboot\nShutdown';
+CONFIRM='No\nYes';
+PROMPT='What would you like to do?';
+PROMPT_L="Are you sure you'd like to exit DWM?";
+PROMPT_R="Are you sure you'd like to reboot?";
+PROMPT_S="Are you sure you'd like to shut down?";
+SELECTION=`echo -e $OPTIONS | dmenu_wrapper $PROMPT`;
+case $SELECTION in
+	Lock)
+		slock
+		;;
+	Logout)
+		SELECTION2=`echo -e $CONFIRM | dmenu_wrapper $PROMPT_L`;
+		case $SELECTION2 in
+			Yes)
+				killall dwm
+				;;
+		esac
+		;;
+	Reboot)
+		SELECTION2=`echo -e $CONFIRM | dmenu_wrapper $PROMPT_R`;
+		case $SELECTION2 in
+			Yes)
+				reboot 0
+				;;
+		esac
+		;;
+	Shutdown)
+		SELECTION2=`echo -e $CONFIRM | dmenu_wrapper $PROMPT_S`;
+		case $SELECTION2 in
+			Yes)
+				shutdown 0
+				;;
+		esac
+		;;
+	*)
+		echo 'Aborted'
+		;;
+esac
+

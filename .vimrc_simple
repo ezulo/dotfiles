@@ -1,0 +1,36 @@
+syntax on
+set number
+set relativenumber
+set shiftwidth=4
+set tabstop=4
+set backspace=2
+set laststatus=2
+set t_Co=256
+set colorcolumn=80
+
+" Plaintext
+autocmd Filetype text set autoindent
+
+" Indent
+filetype plugin indent on
+
+" NerdTree
+let g:NERDTreeQuitOnOpen = 0
+noremap <F2> :NERDTree<CR>
+
+" Other mappings
+inoremap <c-s> <ESC>:w<CR>
+noremap <c-s> :w<CR>
+noremap <c-q> :q<CR>
+" AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+" Color mappings
+highlight colorcolumn ctermbg=red ctermfg=black
+highlight type ctermfg=green
+highlight comment ctermfg=lightblue
+highlight linenr ctermfg=grey
+highlight cursorlinenr ctermfg=white
+highlight include ctermfg=blue
+highlight visual ctermbg=yellow ctermfg=black
+highlight statement ctermbg=black ctermfg=white
+highlight constant ctermfg=green
+highlight conditional ctermfg=blue

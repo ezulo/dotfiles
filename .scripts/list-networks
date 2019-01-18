@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# this requires a symbolic link:
+# ln -s /usr/bin/list-networks $HOME/.scripts/list-networks
+iw dev wlp3s0 scan | grep -e 'SSID: ..*' 

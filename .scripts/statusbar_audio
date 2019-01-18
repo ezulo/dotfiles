@@ -1,0 +1,56 @@
+#!/bin/bash
+
+#muted
+#
+#unmuted
+#
+
+#pause
+#
+#play
+#
+
+
+#config
+TRACKNAME_MAXLENGTH="20"
+ARTISTNAME_MAXLENGTH="20"
+
+
+#get volume
+rawVol=`pactl list sinks | grep 'Volume: front-left' | grep -oP '([0-9]+%)'`
+leftVol=`echo $rawVol | awk '{print $1}' | grep -oP '([0-9]+)'`
+rightVol=`echo $rawVol | awk '{print $2}'| grep -oP '([0-9]+)'`
+let avgVol=$(((leftVol+rightVol)/2))
+avgVol=`echo "$avgVol%"`
+
+#is sink muted?
+audioSymbol=""
+mute=`pactl list sinks | grep 'Mute' | awk '{print $2}'`
+if [[ "$mute" == "yes" ]]; then
+	audioSymbol=""
+	avgVol="x"
+fi
+
+artistName=`mpc | head -n 1 | awk '{if (match($0,/(.*) - (.*)/,m)) print m[1]}'`
+trackName=`mpc | head -n 1 | awk '{if (match($0,/(.*) - (.*)/,m)) print m[2]}'`
+
+#trim artist and track names to maximum width
+trackLength=`echo $trackName | wc -m`
+trackLength=$(($trackLength-1))
+artistLength=`echo $artistName | wc -m`
+artistLength=$(($artistLength-1))
+if [[ "$trackLength" -gt "$TRACKNAME_MAXLENGTH" ]]; then
+	trackName=`echo $trackName | cut -c1-$TRACKNAME_MAXLENGTH`
+	trackName=`echo "$trackName..."`
+fi
+if [[ "$artistLength" -gt "$ARTISTNAME_MAXLENGTH" ]]; then
+	artistName=`echo $artistName | cut -c1-$ARTISTNAME_MAXLENGTH`
+	artistName=`echo "$artistName..."`
+fi
+
+mpcString=`echo "$artistName - $trackName"`
+if [[ -z "$artistName" ]]; then
+	mpcString=""
+fi
+
+echo "$avgVol $audioSymbol $mpcString"
