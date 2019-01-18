@@ -1,7 +1,0 @@
-rofi.font: Gohu Gohufont 12
-rofi.modi: combi
-rofi.width: 50
-rofi.bg: c00
-rofi.fg: c15
-rofi.lines: 8
-rofi.opacity: 80

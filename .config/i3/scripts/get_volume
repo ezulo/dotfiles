@@ -1,3 +1,0 @@
-#!/bin/bash
-VOL=`pactl list sinks | grep "Volume: front-left" | perl -ne '/(\d+%)/ && print $1' | perl -ne '/(\d+)%/ && print $1'`
-echo $VOL
