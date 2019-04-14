@@ -28,18 +28,19 @@ audioSymbol=""
 mute=`pactl list sinks | grep 'Mute' | awk '{print $2}'`
 if [[ "$mute" == "yes" ]]; then
 	audioSymbol=""
-	avgVol="x"
+	avgVol="[mute]"
 fi
 
+playbackStatus=`mpc | head -n 2 | tail -n 1 | awk '{if (match($0,/\[(.*)\]/,m)) print m[1]}'`
 artistName=`mpc | head -n 1 | awk '{if (match($0,/(.*) - (.*)/,m)) print m[1]}'`
 trackName=`mpc | head -n 1 | awk '{if (match($0,/(.*) - (.*)/,m)) print m[2]}'`
 
 #trim artist and track names to maximum width
-trackLength=`echo $trackName | wc -m`
-trackLength=$(($trackLength-1))
+trackNameLength=`echo $trackName | wc -m`
+trackNameLength=$(($trackNameLength-1))
 artistLength=`echo $artistName | wc -m`
 artistLength=$(($artistLength-1))
-if [[ "$trackLength" -gt "$TRACKNAME_MAXLENGTH" ]]; then
+if [[ "$trackNameLength" -gt "$TRACKNAME_MAXLENGTH" ]]; then
 	trackName=`echo $trackName | cut -c1-$TRACKNAME_MAXLENGTH`
 	trackName=`echo "$trackName..."`
 fi
@@ -49,8 +50,8 @@ if [[ "$artistLength" -gt "$ARTISTNAME_MAXLENGTH" ]]; then
 fi
 
 mpcString=`echo "$artistName - $trackName"`
-if [[ -z "$artistName" ]]; then
+if [[ -z "$artistName" || "$playbackStatus" == "paused" ]]; then
 	mpcString=""
 fi
 
-echo "$avgVol $audioSymbol $mpcString"
+echo "$avgVol $audioSymbol $mpcString" 

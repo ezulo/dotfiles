@@ -20,7 +20,7 @@ do
 	WIFI=`statusbar_wifi`
 	if [[ $WIFI != *"off/any" ]]
 	then
-		FINAL=`echo $FINAL$DLM${GREEN} ${RESET}$WIFI`;
+		FINAL=`echo $FINAL$DLM$WIFI`;
 	fi
 
 	# DISPLAY DATE/TIME

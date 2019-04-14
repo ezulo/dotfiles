@@ -1,6 +1,8 @@
 sw_volume: 100
 audio_device_state:1:default detected output
-state: stop
+state: play
+current: 31
+time: 4.052000
 random: 0
 repeat: 0
 single: 0
@@ -9,5 +11,42 @@ crossfade: 0
 mixrampdb: 0.000000
 mixrampdelay: -1.000000
 playlist_begin
-0:Gorillaz/Plastic Beach/09 Some Kind Of Nature.mp3
+0:Tears Run Rings/Always, Sometimes, Seldom, Never/03 - Beautiful Stranger.mp3
+1:Pygmy Lush/Old Friends/06 I'll Wait With You.mp3
+2:Beach Fossils/Clash The Truth/03 Sleep Apnea.mp3
+3:Mac Demarco/Salad Days/06 Let My Baby Stay.mp3
+4:Chelsea Wolfe/A Collection Of Acoustic Songs/01 - Flatlands.mp3
+5:Tears Run Rings/Always, Sometimes, Seldom, Never/03 - Beautiful Stranger.mp3
+6:Duster/Contemporary Movement/01 - Get the Dutch.mp3
+7:Duster/Contemporary Movement/02 - Operations.mp3
+8:Duster/Contemporary Movement/03 - Diamond.mp3
+9:Duster/Contemporary Movement/04 - Me and the Birds.mp3
+10:Duster/Contemporary Movement/05 - Travelogue.mp3
+11:Duster/Contemporary Movement/06 - The Phantom Facing Me.mp3
+12:Duster/Contemporary Movement/07 - Cooking.mp3
+13:Duster/Contemporary Movement/08 - Unrecovery.mp3
+14:Duster/Contemporary Movement/09 - The Breakup Suite.mp3
+15:Duster/Contemporary Movement/10 - Everything You See is Your Own.mp3
+16:Duster/Contemporary Movement/11 - Now It's Coming Back.mp3
+17:Duster/Contemporary Movement/12 - Auto-Mobile.mp3
+18:Mogwai/Happy Songs For Happy People/01 - Hunted By A Freak.mp3
+19:Mogwai/Happy Songs For Happy People/02 - Moses I Amn`t.mp3
+20:Mogwai/Happy Songs For Happy People/03 - Kids Will Be Skeletons.mp3
+21:Mogwai/Happy Songs For Happy People/04 - Killing All The Flies.mp3
+22:Mogwai/Happy Songs For Happy People/05 - Boring Machines Disturbs Sleep.mp3
+23:Mogwai/Happy Songs For Happy People/06 - Ratts Of The Capital.mp3
+24:Mogwai/Happy Songs For Happy People/07 - Golden Porsche.mp3
+25:Mogwai/Happy Songs For Happy People/08 - I Know You Are But What Am I.mp3
+26:Mogwai/Happy Songs For Happy People/09 - Stop Coming To My House.mp3
+27:Simon and Garfunkel/Sounds Of Silence/01 - The Sound Of Silence.mp3
+28:Simon and Garfunkel/Sounds Of Silence/02 - Leaves That Are Green.mp3
+29:Simon and Garfunkel/Sounds Of Silence/03 - Blessed.mp3
+30:Simon and Garfunkel/Sounds Of Silence/04 - Kathy's Song.mp3
+31:Simon and Garfunkel/Sounds Of Silence/05 - Somewhere They Can't Find Me.mp3
+32:Simon and Garfunkel/Sounds Of Silence/06 - Anji.mp3
+33:Simon and Garfunkel/Sounds Of Silence/07 - Richard Cory.mp3
+34:Simon and Garfunkel/Sounds Of Silence/08 - A Most Peculiar Man.mp3
+35:Simon and Garfunkel/Sounds Of Silence/09 - April Come She Will.mp3
+36:Simon and Garfunkel/Sounds Of Silence/10 - We've Got A Groovey Thing Goin'.mp3
+37:Simon and Garfunkel/Sounds Of Silence/11 - I Am A Rock.mp3
 playlist_end

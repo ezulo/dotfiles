@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --bg-fill '/home/eduardo/Pictures/papes/gondola.png' 
+feh --bg-tile '/home/eduardo/Pictures/papes/patterns/pattern_125.gif' 

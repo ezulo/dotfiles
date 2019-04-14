@@ -1,0 +1,2 @@
+BAT="$1"
+echo `acpi | grep "Battery $BAT" | awk '{print $3}' | grep -oP "([a-z|A-Z]+)"`

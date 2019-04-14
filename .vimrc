@@ -32,13 +32,13 @@ set tabstop=4
 set backspace=2
 set laststatus=2
 set t_Co=256
-set colorcolumn=80
 
 let g:user_emmet_settings = {
 \    'indentation' : '  '
 \}
 
 " Plaintext
+autocmd BufEnter * if &filetype == "" | setlocal ft=text | endif
 autocmd Filetype text set autoindent
 
 " Indent
@@ -55,7 +55,7 @@ noremap <c-q> :q<CR>
 noremap <c-f> :set filetype=
 " AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 " Color mappings
-highlight colorcolumn ctermbg=red ctermfg=black
+highlight colorcolumn ctermbg=black ctermfg=red
 highlight type ctermfg=green
 highlight comment ctermfg=lightblue
 highlight linenr ctermfg=grey
@@ -65,3 +65,5 @@ highlight visual ctermbg=yellow ctermfg=black
 highlight statement ctermbg=black ctermfg=white
 highlight constant ctermfg=green
 highlight conditional ctermfg=blue
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%80v.\+/

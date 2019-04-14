@@ -1,0 +1,2 @@
+BAT="$1"
+echo `acpi | grep "Battery $BAT" | grep -oP "([0-9]+%)" | grep -oP "([0-9]+)"`

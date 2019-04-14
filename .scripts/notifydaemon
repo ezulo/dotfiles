@@ -1,0 +1,63 @@
+RESOURCE="/home/eduardo/.scripts/resources"
+
+# power indicators
+let IND_CHARGING=0
+let IND_POW_0=0
+let IND_POW_1=0
+
+# wifi indicators
+let IND_WIFI=0
+
+while [ true ]; do
+	# BATTERY POWER #
+	BAT0_PERC=`get_battery_percentage 0`
+	BAT0_STATUS=`get_battery_status 0`
+	BAT1_PERC=`get_battery_percentage 1`
+	BAT1_STATUS=`get_battery_status 1`
+	NETWORK=`netctl list | grep \* | awk '{print $2}'`
+	if [[ ( "$IND_CHARGING" = 0 ) ]] ; then
+		if [[ ( "$BAT0_STATUS" = "Charging" ) || ( "$BAT1_STATUS" = "Charging" ) ]] ; then
+			notify-send "Battery plugged in."
+			aplay $RESOURCE/BeeBoop.wav
+			IND_CHARGING=1
+			sleep 5
+		fi
+		if [[ ( "$IND_POW_0" = 0 ) ]] ; then
+			if [[ ( "$BAT0_PERC" < 20 ) ]]; then
+				notify-send "WARNING" "Battery 0 is running low."
+				aplay $RESOURCE/BeeBoop.wav
+				IND_POW_0=1
+			fi
+		fi
+		if [[ ( "$IND_POW_1" = 0 ) ]] ; then
+			if [[ ( "$BAT1_PERC" < 20 ) ]]; then
+				notify-send "WARNING" "Battery 1 is running low."
+				aplay $RESOURCE/BeeBoop.wav
+				IND_POW_1=1
+			fi
+		fi
+	else
+		if [[ !( "$BAT0_STATUS" = "Charging" ) && !( "$BAT1_STATUS" = "Charging" ) ]] ; then
+			notify-send "Battery removed from external power." "Remaining percentages: $BAT0_PERC% $BAT1_PERC%"
+			aplay $RESOURCE/BeeBoop.wav
+			IND_CHARGING=0
+			IND_POW_0=0
+			IND_POW_1=0
+		fi
+	fi
+	# WIFI #
+	if [[ ( "$IND_WIFI" = 0 ) ]] ; then
+		if [[ ( "$NETWORK" != "" ) ]] ; then
+			notify-send "Wireless network connected." "$NETWORK"
+			aplay $RESOURCE/BeeBoop.wav
+			IND_WIFI=1
+		fi
+	else
+		if [[ ( "$NETWORK" = "" ) ]] ; then
+			notify-send "Wireless network disconnected."
+			aplay $RESOURCE/BeeBoop.wav
+			IND_WIFI=0
+		fi
+	fi
+	sleep 0.5
+done

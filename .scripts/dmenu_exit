@@ -23,7 +23,7 @@ case $SELECTION in
 		SELECTION2=`echo -e $CONFIRM | dmenu_wrapper $PROMPT_R`;
 		case $SELECTION2 in
 			Yes)
-				reboot 0
+				sudo reboot 0
 				;;
 		esac
 		;;

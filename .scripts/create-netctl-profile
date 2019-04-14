@@ -17,6 +17,7 @@ then
 fi
 
 echo "Connection=wireless" >> $TMP;
+echo "Interface=wlp3s0" >> $TMP;
 echo "" >> $TMP;
 echo "Security=wpa" >> $TMP;
 echo "IP=dhcp" >> $TMP;

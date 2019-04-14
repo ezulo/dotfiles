@@ -39,10 +39,15 @@ hour=`echo $time | awk '{print $1}'`
 minute=`echo $time | awk '{print $2}'`
 second=`echo $time | awk '{print $3}'`
 
-let isPM=$hour/12
-let hour=$hour%12
+hour=`echo ${hour#0}`
+isPM=$((hour/12))
+hour=$((hour%12))
+hour=`printf "%02d" $hour`
+if [ $hour = "00" ]; then
+	hour="12"
+fi
 pmString="AM"
-if [ $isPM > 0 ]; then
+if [ $isPM = "1" ]; then
 	pmString="PM"
 fi
 
