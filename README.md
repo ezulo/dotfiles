@@ -1,5 +1,8 @@
 # Eduardo's Hyprland Dots
 
-## Files
+## Dependencies
+- hyprland
+- waybar
+- kitty
+- qutebrowser
 
-- hyprland.conf
