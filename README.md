@@ -2,6 +2,7 @@
 
 ## Dependencies
 - hyprland
+- neovim
 - waybar
 - kitty
 - qutebrowser
