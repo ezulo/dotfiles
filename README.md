@@ -1,9 +1,10 @@
 # Eduardo's Hyprland Dots
 
-## Dependencies
+## Required Dependencies
 - hyprland
+- hyprpaper
 - neovim
 - waybar
 - kitty
-- qutebrowser
+- qutebrowser (optional)
 
