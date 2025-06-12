@@ -1,10 +1,11 @@
 # Eduardo's Hyprland Dots
 
-## Required Dependencies
+## Dependencies
 - hyprland
 - hyprpaper
 - neovim
 - waybar
 - kitty
-- qutebrowser (optional)
+- jq (for JSON configs)
+- qutebrowser (optional; remove/ignore qutebrowser/ directory if not using)
 
