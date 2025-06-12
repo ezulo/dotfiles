@@ -1,33 +1,37 @@
 // -*- mode: jsonc -*-
 {
-    "layer": "top",
+    "layer": "bottom",
     "position": "top",
     "height": 30,
-    "spacing": 4, 
+    "spacing": 10, 
+	"margin-top": 10,
+	"margin-right": 20,
+	"margin-bottom": 0,
+	"margin-left": 20,
     // Choose the order of the modules
     "modules-left": [
-        "hyprland/workspaces"
-    ],
-    "modules-center": [
+        "hyprland/workspaces",
         "hyprland/window"
     ],
+    //"modules-center": [ ],
     "modules-right": [
         "mpd",
         "idle_inhibitor",
-        "pulseaudio",
-        "network",
+        "battery",
+        "battery#bat2",
         "power-profiles-daemon",
+        "temperature",
         "cpu",
         "memory",
-        "temperature",
+        "pulseaudio",
+		//"disk", // this kinda sucks as is
         "backlight",
         "keyboard-state",
         "sway/language",
-        "battery",
-        "battery#bat2",
-        "clock",
+        "network",
         "tray",
-        "custom/power"
+        "clock"
+        //"custom/power" // segfaults
     ],
     // Modules configuration
     // "sway/workspaces": {
@@ -95,7 +99,8 @@
     "clock": {
         // "timezone": "America/New_York",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "format": "{:%a, %b %d %Y | %r }",
+		"interval": 1
     },
     "cpu": {
         "format": "{usage}% ",
@@ -115,7 +120,7 @@
     "backlight": {
         // "device": "acpi_video1",
         "format": "{percent}% {icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
+        "format-icons": [""]
     },
     "battery": {
         "states": {
@@ -199,6 +204,8 @@
 		}
     },
     "hyprland/window": {
-	"separate-outputs": true
-    }
+		"separate-outputs": true,
+    },
+	"hyprland/workspaces": {
+	}
 }
