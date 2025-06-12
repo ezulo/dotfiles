@@ -1,0 +1,10 @@
+kitty/kitty.conf
+kitty/current-theme.conf
+kitty/kitty.conf.bak
+kitty/kitty.d/fonts.conf
+waybar/theme-rules.css
+waybar/theme.css
+qutebrowser/autoconfig.yml
+qutebrowser/bookmarks
+qutebrowser/qsettings
+qutebrowser/quickmarks
