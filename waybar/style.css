@@ -1,8 +1,7 @@
-@import 'theme.css';
+@import 'theme/colors.css';
 
 * {
-    /* `otf-font-awesome` is required to be installed for icons */
-    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-family: Jetbrains Mono, FontAwesome6Free;
     font-size: 13px;
 }
 
@@ -132,14 +131,15 @@ button:hover {
 }
 
 #clock {
-	color: @color7;
-    background-color: @color0;
+	color: @color8;
+    background-color: @color15;
+    font-weight: bold;
 	margin-right: 10px;
 }
 
 #battery {
     color: @color0;
-    background-color: @color3;
+    background-color: @color11;
 }
 
 #battery.charging, #battery.plugged {
@@ -195,7 +195,7 @@ label:focus {
 }
 
 #backlight {
-    background-color: @color7;
+    background-color: @color3;
 }
 
 #network {
@@ -297,4 +297,4 @@ label:focus {
 	margin-right: 10px;
 }
 
-@import 'theme-rules.css';
+@import 'theme/rules.css';

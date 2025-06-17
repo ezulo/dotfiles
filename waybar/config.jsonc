@@ -17,21 +17,21 @@
     "modules-right": [
         "mpd",
         "idle_inhibitor",
-        "battery",
-        "battery#bat2",
         "power-profiles-daemon",
         "temperature",
         "cpu",
         "memory",
+        "battery",
+        "battery#bat2",
         "pulseaudio",
-		//"disk", // this kinda sucks as is
         "backlight",
-        "keyboard-state",
         "sway/language",
         "network",
         "tray",
         "clock"
-        //"custom/power" // segfaults
+        // "disk", // this kinda sucks as is
+        // "keyboard-state", // doesn't work right (yet!)
+        // "custom/power" // segfaults
     ],
     // Modules configuration
     // "sway/workspaces": {
