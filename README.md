@@ -13,4 +13,5 @@
 - jq (for JSON configs)
 - qutebrowser (optional; remove/ignore qutebrowser/ directory if not using)
 - ttf-jetbrains-mono
+- ttf-font-awesome (v. 6.X.X)
 
