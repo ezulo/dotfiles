@@ -6,6 +6,7 @@
 - hyprshot (optional; for screenshots)
 - kitty
 - neovim
+- rofi (optional, and pretty nice)
 - dunst (optional)
 - waybar
 - fastfetch
