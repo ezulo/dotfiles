@@ -1,12 +1,14 @@
 # Eduardo's Hyprland Dots
 
-## Dependencies
+## Dependencies (As they are)
 - hyprland
 - hyprpaper
-- neovim
-- waybar
 - kitty
+- neovim
+- dunst (optional)
+- waybar
 - fastfetch
 - jq (for JSON configs)
 - qutebrowser (optional; remove/ignore qutebrowser/ directory if not using)
+- ttf-jetbrains-mono
 
