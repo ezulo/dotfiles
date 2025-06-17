@@ -3,6 +3,7 @@
 ## Dependencies (As they are)
 - hyprland
 - hyprpaper
+- hyprshot (optional; for screenshots)
 - kitty
 - neovim
 - dunst (optional)
