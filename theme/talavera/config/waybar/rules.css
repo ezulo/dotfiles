@@ -1,0 +1,50 @@
+#workspaces button.active {
+    background-image: linear-gradient(@color3, @color11)
+}
+
+.modules-right {
+    background-image: linear-gradient(@color7,@color15);
+    color: @color0;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.modules-left > widget {
+    background-image: linear-gradient(@color7,@color15);
+    color: @color0;
+    border-radius: 6px;
+}
+
+#workspaces button {
+    color: @color0;
+}
+
+#window {
+    color: @color4; 
+    font-weight: bold
+}
+
+#idle_inhibitor {
+    background-color: @color4; 
+    color: @color7;
+}
+
+#idle_inhibitor.activated {
+    background-color: @color15; 
+    color: @color4; 
+    border: 1px solid; 
+    font-weight: bold;
+}
+
+#network {
+    color: @color0;
+}
+
+#network.disconnected {
+    color: @color0; 
+    border: 1px solid;
+}
+
+#clock {
+    border: 1px solid;
+}

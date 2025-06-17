@@ -1,0 +1,15 @@
+[urgency-low]
+foreground = "#ff00ff"
+background = "#00ffff"
+frame_color = "#000000"
+
+[urgency-normal]
+foreground = "#ff00ff"
+background = "#00ffff"
+frame_color = "#000000"
+
+[urgency-critical]
+foreground = "#ff00ff"
+background = "#00ffff"
+frame_color = "#000000"
+
