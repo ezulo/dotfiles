@@ -8,3 +8,5 @@ qutebrowser/autoconfig.yml
 qutebrowser/bookmarks
 qutebrowser/qsettings
 qutebrowser/quickmarks
+theme/**/fetch-logo.png
+theme/**/wallpapers/
