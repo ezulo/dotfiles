@@ -7,10 +7,10 @@ gap_size = 4
 corner_radius = 10
 
 [urgency_low]
-timeout=10
+timeout=5
 
 [urgency_normal]
-timeout=10
+timeout=5
 
 [urgency_critical]
 timeout=60
