@@ -7,4 +7,5 @@ c.backend = 'webengine'
 c.changelog_after_upgrade = 'patch'
 c.url.searchengines = {'DEFAULT': 'https://www.startpage.com/do/search?query={}'}
 c.url.start_pages = ['https://www.startpage.com/']
+c.downloads.location.directory = '$HOME/downloads'
 
