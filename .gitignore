@@ -11,5 +11,4 @@ qutebrowser/quickmarks
 theme/current-theme
 theme/**/fetch-logo.png
 theme/**/wallpapers/
-waybar/theme-rules.css
-waybar/theme.css
+waybar/theme/
