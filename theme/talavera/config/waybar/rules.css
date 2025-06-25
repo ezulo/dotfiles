@@ -4,7 +4,6 @@
 
 .modules-right {
     background-image: linear-gradient(@color7,@color15);
-    color: @color0;
     padding-top: 6px;
     padding-bottom: 6px;
 }
@@ -36,7 +35,11 @@
     font-weight: bold;
 }
 
-#network {
+#temperature,
+#cpu,
+#memory,
+#pulseaudio,
+#backlight {
     color: @color0;
 }
 
