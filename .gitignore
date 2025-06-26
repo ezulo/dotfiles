@@ -8,6 +8,7 @@ qutebrowser/autoconfig.yml
 qutebrowser/bookmarks
 qutebrowser/qsettings
 qutebrowser/quickmarks
+rofi/theme/
 theme/current-theme
 theme/**/fetch-logo.png
 theme/**/wallpapers/
