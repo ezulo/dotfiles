@@ -1,15 +1,18 @@
-dunst/dunstrc
-hypr/hyprpaper.conf
 kitty/kitty.conf
-kitty/current-theme.conf
 kitty/kitty.conf.bak
 kitty/kitty.d/fonts.conf
 qutebrowser/autoconfig.yml
 qutebrowser/bookmarks
 qutebrowser/qsettings
 qutebrowser/quickmarks
-rofi/theme/
-theme/current-theme
+
+# Theme stuff
 theme/**/fetch-logo.png
 theme/**/wallpapers/
+theme/current-theme
+hypr/hyprpaper.conf
+hypr/theme
+kitty/theme
+rofi/theme/
 waybar/theme/
+dunst/dunstrc
