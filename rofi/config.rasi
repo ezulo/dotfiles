@@ -148,5 +148,5 @@ textbox-prompt-colon {
     text-color: @normal-foreground;
 }
 
-@import "theme/rules.rasi"
+@import "theme/config.rasi"
 
