@@ -9,8 +9,8 @@ theme/**/fetch-logo.png
 theme/**/wallpapers/
 theme/current-theme
 hypr/hyprpaper.conf
-hypr/theme
-kitty/theme
+hypr/theme/
+kitty/theme/
 rofi/theme/
 waybar/theme/
 dunst/dunstrc
