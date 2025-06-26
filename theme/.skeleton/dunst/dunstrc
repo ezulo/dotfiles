@@ -1,4 +1,7 @@
 ; Fill this out like you would a regular dunstrc!
+
 ; All files in this directory are applied on top of 
 ; `dunstrc.default` in the dunst config directory.
+
+; Feel free to rename, or add more files.
 
