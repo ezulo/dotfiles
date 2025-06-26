@@ -1,0 +1,6 @@
+/*
+ * CSS rules in this file will be included at the end of waybar's `style.css`.
+ * Note that CSS specificity rules apply. If specificity matches, these
+ * rules will overwrite any applied in style.css.
+ */
+
