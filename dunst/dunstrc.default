@@ -1,3 +1,5 @@
+; Defaults
+
 [global]
 font = Monospace 11
 width = (300, 1000)
@@ -14,3 +16,6 @@ timeout=5
 
 [urgency_critical]
 timeout=60
+
+; Theme
+
