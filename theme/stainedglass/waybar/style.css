@@ -27,7 +27,7 @@
 
 /* Style our stay-awake */
 #idle_inhibitor.activated {
-    background-image: linear-gradient(@color1, @color5); font-weight: bold
+    background-image: linear-gradient(@color1, @color9); font-weight: bold
 }
 
 /* modules-right styling */
@@ -53,6 +53,7 @@
 }
 
 #clock {
-    background: linear-gradient(@color15, @color7)
+    color: @color0;
+    background: linear-gradient(@color13, @color5);
 }
 
