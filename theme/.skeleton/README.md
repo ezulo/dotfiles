@@ -4,11 +4,11 @@
 * [Glossary](#glossary)
 * [Notes](#notes)
 * [Getting Started](#getting-started)
-* [colors.json](#colors.json)
 * [Theming Scripts](#theming-scripts)
     * [themectl](#themectl)
     * [themecolor](#themecolor)
-* [Service Configuration](#service-configuration)
+* [Theme Configuration](#theme-configuration)
+    * [colors.json](#colors.json)
     * [wallpapers](#wallpapers)
     * [fastfetch](#fastfetch)
     * [hyprland](#hyprland)
@@ -79,7 +79,7 @@ As a side note, it will also evaluate background color luminance against the
 requested color's luminance, and either color the foreground or the background
 of the output accordingly for enhanced readability.
 
-## Service Configuration
+## Theme Configuration
 The objects / directories here contain configs that will override service 
 configs on the system (non-destructively). These are handled differently for 
 each service. I will aim to provide a brief description for each.
