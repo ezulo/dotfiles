@@ -5,7 +5,6 @@ qutebrowser/qsettings
 qutebrowser/quickmarks
 
 # Theme stuff
-theme/**/fetch-logo.png
 theme/**/wallpapers/
 theme/current-theme
 hypr/hyprpaper.conf
