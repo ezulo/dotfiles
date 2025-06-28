@@ -46,8 +46,8 @@ For the most part, these can be thought of as overrides to your default
 configurations. 
 
 #### A note on `waybar` and `rofi`
-These services use flavors of CSS, and [CSS specificity rules]
-(https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_cascade/Specificity) 
+These services use flavors of CSS, and
+[CSS specificity rules](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_cascade/Specificity) 
 will apply. Keep in mind if your rules are not working, there may be a more
 specific rule in your `waybar` or `rofi` config directories.
 
@@ -87,8 +87,8 @@ aim to provide a brief description for each.
 #### `colors.json`
 This file contains the 16-color ANSI color scheme for your terminal, and
 these colors can be used in various services, which will be explained in
-detail further along. An explanation on ANSI color scheming can be found [here]
-(https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797#256-colors).
+detail further along. An explanation on ANSI color scheming can be found 
+[here](https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797#256-colors).
 
 `color0` through `color15` are your 8 standard colors, and the colors under
 "special" are additional colors that may be used by certain services.
@@ -108,7 +108,7 @@ As a general rule, have at least one file per monitor. Less than that leads to
 undefined behavior.
 
 #### `fastfetch/`
-Similarly to `wallpapers, this is an image repository, but for `fastfetch` 
+Similarly to `wallpapers`, this is an image repository, but for `fastfetch` 
 logos. Drop any `fastfetch` images you want to use in lieu of a system logo 
 here. They will be selected at random and displayed in `kitty`.
 
@@ -154,7 +154,7 @@ wish.
 `themectl` will perform two actions for `waybar`:
 
 * Generate a file `$HOME/.config/waybar/theme/colors.css` from `colors.json`
-* Copy the config files from `./rofi/*` to `$HOME/.config/waybar/theme/`
+* Copy the config files from `./waybar/*` to `$HOME/.config/waybar/theme/`
 
 The only required file is `waybar/style.css`, which is explicitly imported
 by `$HOME/.config/waybar/style.css`. You may break up your theme styles into 
