@@ -6,6 +6,7 @@
 - neovim
 - waybar
 - pipewire
+- reflector (for `scripts/update-mirrors`)
 - jq (for parsing theme JSON data)
 - ttf-jetbrains-mono
 - ttf-font-awesome (v. 6.X.X)
