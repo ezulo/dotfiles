@@ -1,21 +1,21 @@
 # Eduardo's Hyprland Themes
 
 ## Table of Contents
-* [Glossary](#Glossary)
-* [Notes](#Notes)
-* [Getting Started](#Getting Started)
-* [colors.json](#colors.json)
-* [wallpapers](#wallpapers)
-* [fastfetch](#fastfetch)
-* [Service Configuration](#Service Configuration)
+* [Glossary](#glossary)
+* [Notes](#notes)
+* [Getting Started](#getting-started)
+* [Theming Scripts](#theming-scripts)
+    * [themectl](#themectl)
+    * [themecolor](#themecolor)
+* [Theme Configuration](#theme-configuration)
+    * [colors.json](#colors.json)
+    * [wallpapers](#wallpapers)
+    * [fastfetch](#fastfetch)
     * [hyprland](#hyprland)
     * [kitty](#kitty)
     * [dunst](#dunst)
     * [waybar](#waybar)
     * [rofi](#rofi)
-* [Scripts](#Scripts)
-    * [themectl](#themectl)
-    * [themecolor](#themecolor)
 
 ## Glossary
 - "THEME_HOME": The location where themes are installed.
@@ -46,16 +46,49 @@ For the most part, these can be thought of as overrides to your default
 configurations. 
 
 #### A note on `waybar` and `rofi`
-These services use flavors of CSS, and [CSS specificity rules]
-(https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_cascade/Specificity) 
+These services use flavors of CSS, and
+[CSS specificity rules](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_cascade/Specificity) 
 will apply. Keep in mind if your rules are not working, there may be a more
 specific rule in your `waybar` or `rofi` config directories.
 
-## `colors.json`
+## Theming Scripts
+
+#### `themectl`
+The bulk of the theming work is performed by `themectl`. It has a handful of
+directives (which are subject to change):
+
+* `themectl get`: returns the name of the current theme
+* `themectl clear`: unsets the current theme (reverts to system defaults)
+* `themectl set <themename>`: sets the theme, based on its name in `$THEME_HOME`
+* `themectl reload`: rewrites all theme files and reloads relevant services
+    * `dunst` is only reloaded when the config checksum changes
+* `themectl create <themename> [src_theme]`: creates a new theme directory
+    * `src_theme` can be used to duplicate an existing theme
+
+#### `themecolor`
+A rather useful script for printing out different colors in your current theme
+`color.json` file.
+
+* `themecolor ( [color]0-15 | special_color_key ) [nocolor]`: returns the
+  requested color with colorized output (use `nocolor` option to disable).
+* `themecolor all [nocolor]`: pretty prints all theme colors.
+
+`nocolor` can be useful if using this command's output in shell scripts.
+
+As a side note, it will also evaluate background color luminance against the
+requested color's luminance, and either color the foreground or the background
+of the output accordingly for enhanced readability.
+
+## Theme Configuration
+The objects / directories here contain configs that will override service 
+configs on the system. These are handled differently for each service. I will 
+aim to provide a brief description for each.
+
+#### `colors.json`
 This file contains the 16-color ANSI color scheme for your terminal, and
 these colors can be used in various services, which will be explained in
-detail further along. An explanation on ANSI color scheming can be found [here]
-(https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797#256-colors).
+detail further along. An explanation on ANSI color scheming can be found 
+[here](https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797#256-colors).
 
 `color0` through `color15` are your 8 standard colors, and the colors under
 "special" are additional colors that may be used by certain services.
@@ -65,24 +98,19 @@ scheme.
 The colors under the `special` key are used primarily by `kitty.conf`. The ones
 in the default theme are required, but more can be added if you wish.
 
-## `wallpapers`
-This is a directory where you can drop in images for `hyprpaper` to set as your
-desktop backgrounds. It will select a random image for each monitor and fit it
-to your display.
+#### `wallpapers/`
+This directory is an image repository for `hyprpaper`.
+
+`themectl` will, for each monitor, select a random image from this directory 
+and send them to `hyprpaper` for display.
 
 As a general rule, have at least one file per monitor. Less than that leads to
 undefined behavior.
 
-## `fastfetch`
-Similarly to `wallpapers, this is an image repository, but for `fastfetch`.
-Drop any `fastfetch` images you want to use in lieu of a system logo here.
-They will be displayed at random.
-
-## Service Configuration
-The subdirectories here (barring `wallpapers) contain configs that will 
-override service configs on the system (non-destructively). These are handled
-differently for each service. I will aim to provide a brief description for
-each.
+#### `fastfetch/`
+Similarly to `wallpapers`, this is an image repository, but for `fastfetch` 
+logos. Drop any `fastfetch` images you want to use in lieu of a system logo 
+here. They will be selected at random and displayed in `kitty`.
 
 #### `hyprland`
 This contains your theme-specific `hyprland` configurations, and will be saved 
@@ -93,13 +121,18 @@ The only required file under this directory is `hyprland.conf`, which is your
 you `source` them properly in your theme's `hyprland.conf`.
 
 #### `kitty`
-`the
- writes all files under `./kitty` to `$HOME/.config/kitty/theme`.
+`themectl` will perform the following for `kitty`: 
 
-All files under this directory will be `globinclude`'d by `kitty.conf`. Thus,
-It doesn't matter what you name them, so long as they have the `conf` extension.
-Order isn't guaranteed so take care not to provide duplicate configs in
-multiple files.
+* generate a `colors.conf` in `$HOME/.config/kitty/theme`
+* copy all files under `./kitty` to `$HOME/.config/kitty/theme`.
+
+All files in the `$HOME/.config/kitty/theme` directory will be `globinclude`'d
+by `kitty.conf`. Thus, It doesn't matter what you name them, so long as they 
+have the `conf` extension. Order isn't guaranteed so take care not to provide 
+duplicate configs in multiple files.
+
+Also, take care you do not create a `colors.conf` file in `./kitty`, as that
+will override the one generated by `themectl` (unless you desire that)
 
 #### `dunst`
 ***WARNING***: `themectl` destroys your current `dunstrc` file and replaces it.
@@ -121,7 +154,7 @@ wish.
 `themectl` will perform two actions for `waybar`:
 
 * Generate a file `$HOME/.config/waybar/theme/colors.css` from `colors.json`
-* Copy the config files from `./rofi/*` to `$HOME/.config/waybar/theme/`
+* Copy the config files from `./waybar/*` to `$HOME/.config/waybar/theme/`
 
 The only required file is `waybar/style.css`, which is explicitly imported
 by `$HOME/.config/waybar/style.css`. You may break up your theme styles into 
@@ -150,32 +183,4 @@ Similarly to `waybar`, `themectl` will perform two actions for `rofi`:
 
 You may regard the procedure for customization as practically identical to
 `waybar`, but using the `.rasi` file extension.
-
-## Scripts
-
-#### `themectl`
-The bulk of the theming work is performed by `themectl`. It has a handful of
-directives (which are subject to change):
-
-* `themectl get`: returns the name of the current theme
-* `themectl clear`: unsets the current theme (reverts to system defaults)
-* `themectl set <themename>`: sets the theme, based on its name in `$THEME_HOME`
-* `themectl reload`: rewrites all theme files and reloads relevant services
-    * `dunst` is only reloaded when the config checksum changes
-* `themectl create <themename> [src_theme]`: creates a new theme directory
-    * `src_theme` can be used to duplicate an existing theme
-
-#### `themecolor`
-A rather useful script for printing out different colors in your current theme
-`color.json` file.
-
-* `themecolor ( [color]0-15 | special_color_key ) [nocolor]`: returns the
-  requested color with colorized output (use `nocolor` option to disable).
-* `themecolor all [nocolor]`: pretty prints all theme colors.
-
-`nocolor` can be useful if using this command's output in shell scripts.
-
-As a side note, it will also evaluate background color luminance against the
-requested color's luminance, and either color the foreground or the background
-of the output accordingly for enhanced readability.
 
