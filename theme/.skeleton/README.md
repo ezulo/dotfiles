@@ -7,6 +7,9 @@
 * [colors.json](#colors.json)
 * [wallpapers](#wallpapers)
 * [fastfetch](#fastfetch)
+* [Theming Scripts](#theming-scripts)
+    * [themectl](#themectl)
+    * [themecolor](#themecolor)
 * [Service Configuration](#service-configuration)
     * [hyprland](#hyprland)
     * [kitty](#kitty)
@@ -48,7 +51,7 @@ These services use flavors of CSS, and [CSS specificity rules]
 will apply. Keep in mind if your rules are not working, there may be a more
 specific rule in your `waybar` or `rofi` config directories.
 
-## Scripts
+## Theming Scripts
 
 #### `themectl`
 The bulk of the theming work is performed by `themectl`. It has a handful of
