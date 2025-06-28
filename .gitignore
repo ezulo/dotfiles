@@ -3,6 +3,7 @@ qutebrowser/autoconfig.yml
 qutebrowser/bookmarks
 qutebrowser/qsettings
 qutebrowser/quickmarks
+nvim/lazy-lock.lua
 
 # Theme stuff
 theme/**/wallpapers/
