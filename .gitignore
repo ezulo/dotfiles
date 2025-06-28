@@ -13,3 +13,9 @@ kitty/theme/
 rofi/theme/
 waybar/theme/
 dunst/dunstrc
+
+# Files marked licensed
+**/*.licensed.jpg
+**/*.licensed.jpeg
+**/*.licensed.svg
+**/*.licensed.png
