@@ -81,8 +81,8 @@ of the output accordingly for enhanced readability.
 
 ## Theme Configuration
 The objects / directories here contain configs that will override service 
-configs on the system (non-destructively). These are handled differently for 
-each service. I will aim to provide a brief description for each.
+configs on the system. These are handled differently for each service. I will 
+aim to provide a brief description for each.
 
 #### `colors.json`
 This file contains the 16-color ANSI color scheme for your terminal, and
