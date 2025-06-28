@@ -1,4 +1,4 @@
-# Eduardo's Hyprland Dots
+# Eduardo's Hyprland Dots (***WORK IN PROGRESS***)
 
 ## Dependencies (As they are)
 - hyprland
