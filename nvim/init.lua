@@ -1,0 +1,17 @@
+vim.cmd("set cc=80")
+vim.cmd("set cursorline")
+vim.cmd("set hlsearch")
+vim.cmd("set incsearch")
+vim.cmd("set number")
+vim.cmd("set relativenumber")
+vim.cmd("set shiftwidth=4")
+vim.cmd("set tabstop=4")
+vim.cmd("set expandtab")
+vim.cmd("set ttyfast")
+vim.cmd("set wildmode=longest,list")
+vim.cmd("filetype plugin on")
+
+require("config.lazy")
+require("lazy").setup("plugins")
+require("nvim-tree").setup()
+

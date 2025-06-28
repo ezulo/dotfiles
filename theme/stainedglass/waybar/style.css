@@ -1,0 +1,59 @@
+/*
+ * THEME: stainedglass
+ */
+
+/* Cool workspaces effect with multi-color */
+#workspaces button:nth-child(5n+1) {color: @color1}
+#workspaces button:nth-child(5n+2) {color: @color2}
+#workspaces button:nth-child(5n+3) {color: @color3}
+#workspaces button:nth-child(5n+4) {color: @color4}
+#workspaces button:nth-child(5n+0) {color: @color5}
+#workspaces button:nth-child(5n+1).active {
+    background-image: linear-gradient(@color1, @color9)
+}
+#workspaces button:nth-child(5n+2).active {
+    background-image: linear-gradient(@color2, @color10)
+}
+#workspaces button:nth-child(5n+3).active {
+    background-image: linear-gradient(@color3, @color11)
+}
+#workspaces button:nth-child(5n+4).active {
+    background-image: linear-gradient(@color4, @color12)
+}
+#workspaces button:nth-child(5n+0).active {
+    background-image: linear-gradient(@color5, @color13)
+}
+#workspaces button.active {color: @color0}
+
+/* Style our stay-awake */
+#idle_inhibitor.activated {
+    background-image: linear-gradient(@color1, @color9); font-weight: bold
+}
+
+/* modules-right styling */
+.modules-right { background-color: rgba(0,0,0,0);}
+.modules-right > widget > label {opacity: 1; border: 4px solid #000000}
+.modules-right > widget > box {opacity: 1; border: 4px solid #000000}
+.modules-right > widget > label:hover {opacity: 1;}
+.modules-right > widget > box:hover {opacity: 1;}
+
+/* gradient effect on modules */
+#temperature,
+#cpu,
+#memory {
+    background: linear-gradient(@color12, @color4)
+}
+
+#network, #tray, #battery.charging, #battery.plugged {
+    background: linear-gradient(@color10, @color2)
+}
+
+#pulseaudio, #backlight {
+    background: linear-gradient(@color11, @color3)
+}
+
+#clock {
+    color: @color0;
+    background: linear-gradient(@color13, @color5);
+}
+

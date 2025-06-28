@@ -1,15 +1,23 @@
-dunst/dunstrc
-hypr/hyprpaper.conf
-kitty/kitty.conf
-kitty/current-theme.conf
 kitty/kitty.conf.bak
-kitty/kitty.d/fonts.conf
 qutebrowser/autoconfig.yml
 qutebrowser/bookmarks
 qutebrowser/qsettings
 qutebrowser/quickmarks
-theme/current-theme
-theme/**/fetch-logo.png
+nvim/lazy-lock.*
+
+# Theme stuff
 theme/**/wallpapers/
-waybar/theme-rules.css
-waybar/theme.css
+theme/current-theme
+hypr/hyprpaper.conf
+hypr/theme/
+kitty/theme/
+rofi/theme/
+waybar/theme/
+dunst/dunstrc
+
+# Files marked licensed
+**/*.licensed.jpg
+**/*.licensed.jpeg
+**/*.licensed.svg
+**/*.licensed.png
+
