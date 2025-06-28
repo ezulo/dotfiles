@@ -1,13 +1,13 @@
 # Eduardo's Hyprland Themes
 
 ## Table of Contents
-* [Glossary](#Glossary)
-* [Notes](#Notes)
-* [Getting Started](#Getting Started)
+* [Glossary](#glossary)
+* [Notes](#notes)
+* [Getting Started](#getting-started)
 * [colors.json](#colors.json)
 * [wallpapers](#wallpapers)
 * [fastfetch](#fastfetch)
-* [Service Configuration](#Service Configuration)
+* [Service Configuration](#service-configuration)
     * [hyprland](#hyprland)
     * [kitty](#kitty)
     * [dunst](#dunst)
