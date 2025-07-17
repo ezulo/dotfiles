@@ -4,9 +4,8 @@
 * [Glossary](#glossary)
 * [Notes](#notes)
 * [Getting Started](#getting-started)
-* [Theming Scripts](#theming-scripts)
+* [Theming](#theming)
     * [themectl](#themectl)
-    * [themecolor](#themecolor)
 * [Theme Configuration](#theme-configuration)
     * [colors.json](#colors.json)
     * [wallpapers](#wallpapers)
@@ -51,33 +50,27 @@ These services use flavors of CSS, and
 will apply. Keep in mind if your rules are not working, there may be a more
 specific rule in your `waybar` or `rofi` config directories.
 
-## Theming Scripts
+## Theming
 
-#### `themectl`
 The bulk of the theming work is performed by `themectl`. It has a handful of
 directives (which are subject to change):
 
-* `themectl get`: returns the name of the current theme
 * `themectl clear`: unsets the current theme (reverts to system defaults)
-* `themectl set <themename>`: sets the theme, based on its name in `$THEME_HOME`
-* `themectl reload`: rewrites all theme files and reloads relevant services
-    * `dunst` is only reloaded when the config checksum changes
-* `themectl create <themename> [src_theme]`: creates a new theme directory
+* `themectl color <query> [no_color]`: pretty prints theme color(s) to terminal
+    * The query `all` will prettyprint all available keys + colors
+    * You may query by 8/16 color codes (0 -> 15) or by any key under "special"
+      in the current theme's `colors.json` file.
+    * It will colorize background / foreground of text based on a perceived
+      luminance comparison of the color queried against the background color.
+      Pass the `no_color` option to disable coloration.
+* `themectl create <themename> [src_theme]`: Creates a new theme directory
     * `src_theme` can be used to duplicate an existing theme
-
-#### `themecolor`
-A rather useful script for printing out different colors in your current theme
-`color.json` file.
-
-* `themecolor ( [color]0-15 | special_color_key ) [nocolor]`: returns the
-  requested color with colorized output (use `nocolor` option to disable).
-* `themecolor all [nocolor]`: pretty prints all theme colors.
-
-`nocolor` can be useful if using this command's output in shell scripts.
-
-As a side note, it will also evaluate background color luminance against the
-requested color's luminance, and either color the foreground or the background
-of the output accordingly for enhanced readability.
+* `themectl get`: Returns the name of the current theme.
+* `themectl ls`: Returns a list of all available themes.
+* `themectl set <themename>`: Sets the theme, based on its name in `$THEME_HOME`
+* `themectl reload`: Rewrites all theme files and reloads relevant services
+    * If any changes to `dunst` were detected, it will wait for log messages to
+      timeout before initiating a reload.
 
 ## Theme Configuration
 The objects / directories here contain configs that will override service 
@@ -96,7 +89,7 @@ detail further along. An explanation on ANSI color scheming can be found
 scheme.
 
 The colors under the `special` key are used primarily by `kitty.conf`. The ones
-in the default theme are required, but more can be added if you wish.
+in the default theme are required, but more can be added if you wish to do so.
 
 #### `wallpapers/`
 This directory is an image repository for `hyprpaper`.
@@ -158,16 +151,16 @@ wish.
 
 The only required file is `waybar/style.css`, which is explicitly imported
 by `$HOME/.config/waybar/style.css`. You may break up your theme styles into 
-multiple files, but they must be explicitly imported by `waybar/style.css`.
+multiple files, but they must be explicitly imported by `./waybar/style.css`.
 
 Your theme's `style.css` is imported at the end of the waybar service config 
-`style.css`. CSS specificity rules apply.
+`$HOME/.config/waybar/style.css`. CSS specificity rules apply.
 
 `colors.css` contains color definitions based on `colors.json`, and may be used
 something like the following:
 
 ```css
-/* waybar/styles.css */
+/* mytheme/waybar/styles.css */
 @import 'colors.css';
 /* ... */
 #my_id {
@@ -178,9 +171,29 @@ something like the following:
 #### `rofi`
 Similarly to `waybar`, `themectl` will perform two actions for `rofi`:
 
-* Generate a `colors.rasi` from `colors.json`
-* Copy the config files from `./rofi` to `$HOME/.config/rofi/theme`
+* Generate a file `$HOME/.config/rofo/theme/colors.rasi` from `colors.json`
+* Copy the config files from `./rofi` to `$HOME/.config/rofi/theme/`
 
 You may regard the procedure for customization as practically identical to
 `waybar`, but using the `.rasi` file extension.
+
+#### `wofi`
+This one works a bit different from `rofi` and has the unfortunate limitation
+that relative paths in the CSS `@import` directive are evaluated from where the
+process is called (useless!). This is due to a GTK technicality and cannot be
+remedied, short of making a new menu tool.
+
+What this means practically is that any CSS file imports you want to do will
+have to specify absolute paths. 
+
+As a workaround, I have this module inject the absolute path of `colors.css`,
+using a simple sed substitution which looks for a marker "{_COLORS_CSS_}".
+Simply add this string wherever you wish to fill in the `colors.css` path.
+The default `wofi/style.css` already does this.
+
+In summary, this module will:
+
+* Generate a file `$HOME/.config/wofi/theme/colors.css` from `colors.json`
+* Copy config files from `./wofi` to `$HOME/.config/wofi/theme`, substituting
+  the marker `{_COLORS_CSS_}` for the absolute path of our `colors.css` file.
 
