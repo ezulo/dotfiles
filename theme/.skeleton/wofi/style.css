@@ -6,14 +6,13 @@
  * Specificity applies. Useful list of selectors at this URL:
  * https://cloudninja.pw/docs/wofi.html
  *
- * Note that any imports in here must be absolute paths due to how GTK looks
- * for files. Recommendation is to use a single file rather than importing
- * files manually.
+ * Note that the @import directive must be absolute paths due to a GTK
+ * technicality. The absolute path to a generated colors.css will be injected
+ * into the {_COLORS_CSS_} marker below.
  *
- * CSS colors will be prepended to this file at the marker below.
  */
 
-{COLORS_CSS}
+@import "{_COLORS_CSS_}";
 
 * {
     font-family: monospace;
