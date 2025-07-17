@@ -88,12 +88,15 @@ button:hover {
 #custom-media,
 #tray,
 #mode,
-#idle_inhibitor,
 #scratchpad,
 #power-profiles-daemon,
 #mpd {
-    padding: 0 10px;
+    padding: 0 5px;
     color: @colorbg;
+}
+
+#idle_inhibitor {
+    padding: 0 10px;
 }
 
 #window,
@@ -134,7 +137,7 @@ button:hover {
 	color: @color8;
     background-color: @color15;
     font-weight: bold;
-	margin-right: 10px;
+	margin-right: 0px;
 }
 
 #battery {
@@ -295,6 +298,11 @@ label:focus {
 	padding-left: 14px;
 	padding-right: 0;
 	margin-right: 10px;
+}
+
+#custom-zeit {
+    background-color: @colorbg;
+    color: @colorfg;
 }
 
 @import 'theme/style.css';

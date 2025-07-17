@@ -48,12 +48,23 @@
     background: linear-gradient(@color10, @color2)
 }
 
-#pulseaudio, #backlight {
+#network.disconnected {
+    background: none;
+    background-color: @color7;
+}
+
+#pulseaudio, #backlight, #battery {
     background: linear-gradient(@color11, @color3)
 }
 
 #clock {
     color: @color0;
     background: linear-gradient(@color13, @color5);
+}
+
+#custom-zeit {
+    background-color: @color0;
+    color: @color5;
+    font-weight: bold;
 }
 
