@@ -208,7 +208,7 @@
         "format-alt": "{text} ",
         "tooltip-format": "{text}",
         "interval": 1,
-        "exec": "$HOME/.local/bin/zeitget",
+        "exec": "$HOME/.config/scripts/zeit-get",
         "exec-if": "$HOME/.local/bin/zeit tracking"
     },
     "hyprland/window": {
