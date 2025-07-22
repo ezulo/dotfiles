@@ -1,6 +1,6 @@
 [submodule "hypr"]
 	path = hypr
 	url = git@github.com:ezulo/hyprland-dots.git
-[submodule "bash-scripts"]
+[submodule "scripts"]
 	path = scripts
 	url = git@github.com:ezulo/bash-scripts.git
