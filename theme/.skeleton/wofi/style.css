@@ -19,9 +19,9 @@
 }
 
 window {
-    color: @colorfg;
-    background-color: @colorbg;
-    border: 3px solid @color13;
+    color: @color-foreground;
+    background-color: @color-background;
+    border: 3px solid @color3;
     border-radius: 5px;
 }
 
@@ -29,11 +29,11 @@ window {
 }
 
 #entry:selected {
-    background-color: @colorsbg;
+    background-color: @color-selection-background;
 }
 
 #text:selected {
-    color: @colorsfg;
+    color: @color-selection-foreground;
 }
 
 #text {
@@ -43,11 +43,11 @@ window {
 #input {
     background-color: rgba(0,0,0,0);
     margin: 20px;
-    color: @colorfg;
+    color: @color-foreground;
     border-radius: 0;
 }
 
 #inner-box {
-    border-top: 1px solid @colorfg;
+    border-top: 1px solid @color-foreground;
 }
 

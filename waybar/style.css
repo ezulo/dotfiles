@@ -7,7 +7,7 @@
 
 window#waybar {
 	background-color: transparent;
-    color: @colorbg;
+    color: @color-background;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -21,7 +21,7 @@ window#waybar.empty {
     background-color: transparent;
 }
 window#waybar.solo {
-    background-color: @colorbg;
+    background-color: @color-background;
 }
 */
 
@@ -48,7 +48,7 @@ button:hover {
     padding: 3px 5px;
     background-color: transparent;
     border-radius: 5px;
-    color: @colorfg;
+    color: @color-foreground;
 }
 
 #workspaces button:hover {
@@ -62,8 +62,8 @@ button:hover {
 
 #workspaces button.active {
 	font-weight: bold;
-	color: @colorbg;
-	background-color: @colorfg;
+	color: @color-background;
+	background-color: @color-foreground;
 }
 
 #workspaces button.urgent {
@@ -92,7 +92,7 @@ button:hover {
 #power-profiles-daemon,
 #mpd {
     padding: 0 5px;
-    color: @colorbg;
+    color: @color-background;
 }
 
 #idle_inhibitor {
@@ -102,7 +102,7 @@ button:hover {
 #window,
 #workspaces {
     margin: 0 5px;
-	color: @colorfg;
+	color: @color-foreground;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
@@ -112,18 +112,18 @@ button:hover {
 }
 
 .modules-left > widget {
-    background-color: @colorbg;
+    background-color: @color-background;
 	border-radius: 5px;
 }
 
 .modules-center {
-    /* background-color: @colorbg; */
+    /* background-color: @color-background; */
 	background-color: transparent;
 	border-radius: 5px;
 }
 
 .modules-right {
-    background-color: @colorbg;
+    background-color: @color-background;
 	border-radius: 5px;
 	padding: 5px 0px;
 }
@@ -301,8 +301,8 @@ label:focus {
 }
 
 #custom-zeit {
-    background-color: @colorbg;
-    color: @colorfg;
+    background-color: @color-background;
+    color: @color-foreground;
 }
 
 @import 'theme/style.css';
