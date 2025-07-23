@@ -60,6 +60,7 @@
 #clock {
     color: @color0;
     background: linear-gradient(@color13, @color5);
+    margin-right: 0;
 }
 
 #custom-zeit {
