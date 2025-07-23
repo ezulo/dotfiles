@@ -137,7 +137,7 @@ button:hover {
 	color: @color8;
     background-color: @color15;
     font-weight: bold;
-	margin-right: 0px;
+    margin-right: 5px;
 }
 
 #battery {
