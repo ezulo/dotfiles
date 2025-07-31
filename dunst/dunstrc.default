@@ -7,6 +7,7 @@ origin = top-right
 offset = (20, 10)
 gap_size = 4
 corner_radius = 10
+follow = mouse
 
 [urgency_low]
 timeout=5
