@@ -8,7 +8,7 @@
  *
  * Note that the @import directive must be absolute paths due to a GTK
  * technicality. The absolute path to a generated colors.css will be injected
- * into the {_COLORS_CSS_} marker below.
+ * into the _COLORS_CSS_ marker below.
  *
  */
 
