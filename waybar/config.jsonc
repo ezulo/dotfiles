@@ -11,7 +11,8 @@
     // Choose the order of the modules
     "modules-left": [
         "hyprland/workspaces",
-        "hyprland/window"
+        "hyprland/window",
+        "hyprland/submap"
     ],
     "modules-right": [
         "mpd",
@@ -215,5 +216,9 @@
 		"separate-outputs": true
     },
 	"hyprland/workspaces": {
-	}
+	},
+    "hyprland/submap": {
+        "format": "MODE: {}",
+        "tooltip": "true"
+    }
 }

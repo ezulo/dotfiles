@@ -68,6 +68,14 @@ button:hover {
     background-color: #eb4d4b;
 }
 
+
+#submap {
+    padding: 3px 5px;
+    background-image: linear-gradient(@color15, @color7);
+    color: @color5;
+    font-weight: bold;
+}
+
 #mode {
     background-color: #64727D;
     box-shadow: inset 0 -3px #ffffff;
