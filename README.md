@@ -19,8 +19,7 @@ services I'm currently using.
 What dependencies are required depends on your use case and how much of the submodules in this
 repository you choose to use. This list will assume you'd like to use everything contained herein.
 
-#### General Dependencies
-
+**General Dependencies**:
 - Wayland + Wayland compositor (currently, `hyprland` is the preferred environment)
 - `zsh` for interactive shell
 - `bash` for scripts
@@ -29,10 +28,7 @@ repository you choose to use. This list will assume you'd like to use everything
 - `neovim` for text editor
 - `kitty` for terminal emulator
 
-Other dependencies are broken down by submodules as follows, and may be swapped out with
-alternatives with (relative) ease, or so I hope!
-
-#### `hypr` (Hyprland Dots)
+**`hypr` (Hyprland Dots) Dependencies**:
 - `kitty` for terminal emulator
 - `dunst` for notifications
 - `pipewire` and `wireplumber` for audio control, and `playerctl` for next/pause/play/prev
@@ -41,7 +37,7 @@ alternatives with (relative) ease, or so I hope!
 - `thunar` for file explorer
 - `neovim` for text editor
 
-#### `scripts` (User scripts)
+**`scripts` (User scripts) Dependencies**:
 "themectl / zmenu module" designation simply implies that either zmenu or themectl will attempt to
 write config files for these things in `$USER/.config/..` ,but they are not required for any
 other purpose unless otherwise stated here.
@@ -68,6 +64,6 @@ other purpose unless otherwise stated here.
 - `zeit` for zmenu [tasks](scripts/include/zmenu/modules/tasks.sh) module (may get rid of it)
 - `fastfetch` for [fetch](scripts/fetch) script, to support custom fetch icons from theme.
 
-#### `nvim` (Neovim dots)
+**`nvim` (Neovim dots) Dependencies**:
 - `neovim` itself
 - `nvim-lazy`
