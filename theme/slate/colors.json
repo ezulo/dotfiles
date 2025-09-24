@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "special": {
+    "background": "#2A2A2A",
+    "foreground": "#F5F5DC",
+    "cursor": "#7A9A7A",
+    "selection_background": "#6B9AA8",
+    "selection_foreground": "#ffffff",
+    "alert": "#ff6347"
+  },
+  "colors": {
+    "color0": "#2E2E2E",
+    "color1": "#4A7B5A",
+    "color2": "#70A070",
+    "color3": "#8A9A7B",
+    "color4": "#5A7D8C",
+    "color5": "#6B6B7A",
+    "color6": "#7A9A9A",
+    "color7": "#DADADA",
+    "color8": "#4A4A4A",
+    "color9": "#6EA06B",
+    "color10": "#90C07A",
+    "color11": "#A8B08A",
+    "color12": "#6B9AA8",
+    "color13": "#8A8A9A",
+    "color14": "#9ABABA",
+    "color15": "#F5F5F5"
+  }
+}

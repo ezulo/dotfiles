@@ -1,0 +1,86 @@
+/*
+ * THEME: slate
+ */
+
+#workspaces button {color: @color2}
+#workspaces button.active {
+    background-image: linear-gradient(@color2, @color10)
+}
+#workspaces button.active {color: @color0}
+
+/* Style our stay-awake */
+#idle_inhibitor.activated {
+    color: @color2;
+    background-image: linear-gradient(@color15, @color7);
+    font-weight: bold;
+}
+
+/* modules-right styling */
+.modules-right { background-color: rgba(42,42,42,0.6);}
+.modules-right > widget > label {border: 0}
+.modules-right > widget > box {border: 0}
+
+#temperature,
+#cpu,
+#memory,
+#network,
+#tray,
+#pulseaudio,
+#backlight,
+#battery.charging,
+#battery.plugged, 
+#battery {
+    background: linear-gradient(@color8, @color0);
+    color: @color11;
+}
+
+#temperature:hover,
+#cpu:hover,
+#memory:hover,
+#network:hover,
+#tray:hover,
+#pulseaudio:hover,
+#backlight:hover,
+#battery.charging:hover,
+#battery.plugged:hover,
+#battery:hover {
+    background: linear-gradient(@color15, @color7);
+    color: @color0;
+}
+
+#battery.charging {
+    color: @color9;
+}
+
+@keyframes blink {
+    to { color: @color15 }
+}
+
+#battery.critical:not(.charging)
+{
+  color: @color-alert;
+  animation: blink 0.5s steps(2,start) infinite;
+}
+
+.modules-right > widget > box:hover {
+    background: linear-gradient(@color15, @color7);
+    color: @color0;
+}
+
+#network.disconnected {
+    background: none;
+    background-color: @color7;
+}
+
+#clock {
+    color: @color0;
+    background: linear-gradient(@color15, @color7);
+    margin-right: 5;
+}
+
+#custom-zeit {
+    background-color: @color0;
+    color: @color5;
+    font-weight: bold;
+}
+

@@ -1,0 +1,37 @@
+@import "{_COLORS_CSS_}";
+
+* {
+    font-family: monospace;
+}
+
+window {
+    color: @color-foreground;
+    background-color: rgba(0,0,0,0.8);
+}
+
+#entry {
+}
+
+#entry:selected {
+    background-color: @color-selection-background;
+}
+
+#text:selected {
+    color: @color-selection-foreground;
+}
+
+#text {
+    padding: 0px 20px;
+}
+
+#input {
+    background-color: rgba(0,0,0,0);
+    margin: 20px;
+    color: @color-foreground;
+    border-radius: 0;
+}
+
+#inner-box {
+    border-top: 1px solid @color-foreground;
+}
+
