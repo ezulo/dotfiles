@@ -1,7 +1,15 @@
-# Eduardo's Dotfiles (***WORK IN PROGRESS***)
+# Eduardo's Dotfiles
 
 A set of dotfiles tailored towards Arch Linux (and derivative) distros. Currently tailored for
 my workflow in hyprland, and eventually any other Wayland compositors I choose to support.
+
+I attempt to keep these dotfiles as **simple** and **modular** as I humanly can, while keeping
+third-party dependencies to an absolute minimum. There are no nice-to-have animations or robust
+applications doing the heavy lifting, only very simple configuration for a functional, reliable,
+and (most importantly) serviceable Arch Linux desktop system.
+
+Every directory in this repo is most certainly not required; they are simply configurations for
+services I'm currently using.
 
 ## To-Dos
 - Add SwayWM compatibility
@@ -11,10 +19,11 @@ my workflow in hyprland, and eventually any other Wayland compositors I choose t
 What dependencies are required depends on your use case and how much of the submodules in this
 repository you choose to use. This list will assume you'd like to use everything contained herein.
 
-#### General Dependencies (***WORK IN PROGRESS***)
+#### General Dependencies
 
-- Wayland compositor (currently, `hyprland` preferred)
-- `zsh`
+- Wayland + Wayland compositor (currently, `hyprland` is the preferred environment)
+- `zsh` for interactive shell
+- `bash` for scripts
 - `qutebrowser` for vim-like web browsing
 - `dunst` for notifications
 - `neovim` for text editor
