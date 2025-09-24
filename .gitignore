@@ -1,3 +1,4 @@
+# Stateful things / lock files
 kitty/kitty.conf.bak
 qutebrowser/autoconfig.yml
 qutebrowser/bookmarks
@@ -12,6 +13,7 @@ hypr/hyprpaper.conf
 hypr/theme/
 kitty/theme/
 rofi/theme/
+wofi/theme/
 waybar/theme/
 dunst/dunstrc
 
@@ -20,4 +22,14 @@ dunst/dunstrc
 **/*.licensed.jpeg
 **/*.licensed.svg
 **/*.licensed.png
+
+# Application Specific
+FreeCAD/
+QtProject.conf
+Thunar/
+xfce4/ 
+
+# Things not yet ready for check-in / don't belong in this repo
+btop/
+cpplint/
 
