@@ -29,10 +29,13 @@
 #backlight,
 #battery.charging,
 #battery.plugged, 
-#battery {
+#battery,
+#custom-mpd {
     background: linear-gradient(@color8, @color0);
-    color: @color11;
+    color: @color7;
 }
+
+
 
 #temperature:hover,
 #cpu:hover,
@@ -43,13 +46,14 @@
 #backlight:hover,
 #battery.charging:hover,
 #battery.plugged:hover,
-#battery:hover {
+#battery:hover,
+#custom-mpd:hover {
     background: linear-gradient(@color15, @color7);
     color: @color0;
 }
 
 #battery.charging {
-    color: @color9;
+    color: @color10;
 }
 
 @keyframes blink {
@@ -58,7 +62,7 @@
 
 #battery.critical:not(.charging)
 {
-  color: @color-alert;
+  color: @color9;
   animation: blink 0.5s steps(2,start) infinite;
 }
 
