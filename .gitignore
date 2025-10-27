@@ -4,8 +4,10 @@ qutebrowser/autoconfig.yml
 qutebrowser/bookmarks
 qutebrowser/qsettings
 qutebrowser/quickmarks
-nvim/lazy-lock.*
+mpd/database
+mpd/sticker.sql
 ncmpcpp/error.log
+nvim/lazy-lock.*
 
 # Theme stuff
 theme/**/wallpapers/
