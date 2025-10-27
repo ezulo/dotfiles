@@ -15,8 +15,8 @@
         "hyprland/submap"
     ],
     "modules-right": [
-        "mpd",
         "idle_inhibitor",
+        "custom/mpd",
         "power-profiles-daemon",
         "temperature",
         "cpu",
@@ -61,16 +61,17 @@
         }
     },
     "mpd": {
-        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-        "format-disconnected": "Disconnected ",
-        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {title}  ",
+        "format-disconnected": "Disconnected  ",
+        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped  ",
+        "max-length": 50,
         "unknown-tag": "N/A",
         "interval": 5,
         "consume-icons": {
             "on": " "
         },
         "random-icons": {
-            "off": "<span color=\"#f53c3c\"></span> ",
+            "off": "",
             "on": " "
         },
         "repeat-icons": {
@@ -100,7 +101,7 @@
     "clock": {
         // "timezone": "America/New_York",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "{:%a, %b %d %Y | %r }",
+        "format": "󰃰 {:%a, %b %d %Y | %r }",
 		"interval": 1
     },
     "cpu": {
@@ -116,7 +117,7 @@
         "critical-threshold": 80,
         // "format-critical": "{temperatureC}°C {icon}",
         "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
+        "format-icons": ["", "", "", ""]
     },
     "backlight": {
         // "device": "acpi_video1",
@@ -131,7 +132,7 @@
         },
         "format": "{capacity}% {icon}",
         "format-full": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
+        "format-charging": "{capacity}% 󰂄",
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
@@ -153,9 +154,9 @@
       }
     },
     "network": {
-        "format-wifi": "{signalStrength}% ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-wifi": "{signalStrength}%  ",
+        "format-ethernet": "{ipaddr}/{cidr} 󰈀",
+        "tooltip-format": "{ifname} via {gwaddr} 󰀑",
         "tooltip-format-wifi": "SSID: {essid}",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "⚠",
@@ -180,18 +181,6 @@
         },
         "on-click": "pavucontrol"
     },
-    "custom/media": {
-        "format": "{icon} {text}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-    },
     "custom/power": {
         "format" : "⏻ ",
 		"tooltip": false,
@@ -210,7 +199,13 @@
         "tooltip-format": "{text}",
         "interval": 1,
         "exec": "$HOME/.config/scripts/zeit-get",
-        "exec-if": "$HOME/.local/bin/zeit tracking"
+        "exec-if": "mpc"
+    },
+    "custom/mpd": {
+        "format": "{text}  ",
+        "exec": "$HOME/.config/waybar/scripts/mpd-info",
+        "interval": 1,
+        "on-click": "$HOME/.config/scripts/kitty-cmd ncmpcpp"
     },
     "hyprland/window": {
 		"separate-outputs": true
