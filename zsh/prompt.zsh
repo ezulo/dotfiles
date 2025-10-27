@@ -2,7 +2,7 @@ setopt prompt_subst
 
 # Build ok / err checkmark
 ps1_checkmark() {
-    print -r '%(?:%{$fg_bold[green]%}%1{➜%}:%{$fg_bold[red]%}%1{➜%})%{$reset_color%}'
+    print -r '%(?:%{$fg_bold[green]%}%1{➜%}:%{$fg_bold[red]%}%1{x%})%{$reset_color%}'
 }
 
 # Build user@hostname

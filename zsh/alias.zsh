@@ -35,3 +35,6 @@ alias color='themecolor'
 # Custom
 alias zshconf="nvim ~/.zshrc"
 alias cdc="cd ~/.config"
+
+# feh
+alias pics="feh --fullscreen -."

@@ -7,3 +7,6 @@ export TERM="kitty"
 
 export ZEIT_DB="$HOME/.config/zeit/zeit.db"
 
+# esp-idf
+export ESP32_COMPONENT_HOME="$HOME/Projects/esp32/esp32_components"
+
