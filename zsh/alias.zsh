@@ -14,10 +14,13 @@ alias vim='nvim'
 alias z='zathura'
 
 # Git
-alias gits='git status'
 alias gitc='git commit'
+alias gitd='git diff'
+alias gitl='git log'
+alias gits='git status'
 alias gitp='git pull'
-alias gitps='git push'
+# alias gitps='git push'
+alias push='git push'
 
 # PlatformIO
 alias piols='pio boards'
