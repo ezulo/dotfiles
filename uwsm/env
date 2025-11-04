@@ -1,0 +1,21 @@
+#!/bin/echo PleaseSource
+
+# XDG
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+
+# User executables
+export LOCAL_BIN_DIR="$HOME/.local/bin"
+
+# Path
+PATH+=":$LOCAL_BIN_DIR"
+PATH+=":$XDG_CONFIG_HOME/scripts"
+export PATH
+
+# Custom
+export THEME_HOME="$HOME/.config/theme"
+export ZMENU_INCLUDE_DIR="$XDG_CONFIG_HOME/.config/scripts/include"
+
+# Hyprland
+export HYPRLAND_CONFIG="$HOME/.config/hypr/hypr.conf"
+
