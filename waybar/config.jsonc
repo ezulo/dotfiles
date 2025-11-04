@@ -132,11 +132,11 @@
         },
         "format": "{capacity}% {icon}",
         "format-full": "{capacity}% {icon}",
-        "format-charging": "{capacity}% 󰂄",
-        "format-plugged": "{capacity}% ",
+        "format-charging": "{capacity}% {icon} 󱐋",
+        "format-plugged": "{capacity}% {icon}",
         "format-alt": "{time} {icon}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
+        //"format-good": "", // An empty format will hide the module
+        "format-full": "[FULL] {icon} 󱐋" ,
         "format-icons": ["", "", "", "", ""]
     },
     "battery#bat2": {
@@ -198,14 +198,14 @@
         "format-alt": "{text} ",
         "tooltip-format": "{text}",
         "interval": 1,
-        "exec": "$HOME/.config/scripts/zeit-get",
+        "exec": "zeit-get",
         "exec-if": "mpc"
     },
     "custom/mpd": {
         "format": "{text}  ",
-        "exec": "$HOME/.config/waybar/scripts/mpd-info",
+        "exec": "mpd-info",
         "interval": 1,
-        "on-click": "$HOME/.config/scripts/kitty-cmd ncmpcpp"
+        "on-click": "kitty-cmd ncmpcpp"
     },
     "hyprland/window": {
 		"separate-outputs": true
