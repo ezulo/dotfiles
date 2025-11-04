@@ -1,6 +1,10 @@
 # Wrappers
 alias ls='ls --color=auto --group-directories-first'
 alias grep='grep --color=auto'
+alias sudo='doas'
+
+# Hyprland
+alias hyprlog='tail -f '"$HYPRLAND_LOG_FILE"
 
 # Neovim
 alias v='nvim'
@@ -28,6 +32,7 @@ alias idf-load='. /opt/esp-idf/export.sh'
 alias idf='idf.py'
 
 # Themes
+alias theme='themectl get'
 alias themes='themectl set'
 alias themer='themectl reload'
 alias color='themecolor'
