@@ -30,7 +30,6 @@ button {
     box-shadow: inset 0 -3px transparent;
     /* Avoid rounded borders under each button name */
     border: none;
-    border-radius: 0px;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
@@ -42,7 +41,6 @@ button:hover {
 #workspaces button {
     padding: 3px 5px;
     background-color: transparent;
-    border-radius: 5px;
     color: @color-foreground;
 }
 
@@ -125,18 +123,15 @@ button:hover {
 
 .modules-left > widget {
     background-color: @color-background;
-	border-radius: 5px;
 }
 
 .modules-center {
     /* background-color: @color-background; */
 	background-color: transparent;
-	border-radius: 5px;
 }
 
 .modules-right {
     background-color: @color-background;
-	border-radius: 5px;
 	padding: 5px 0px;
 }
 
@@ -145,7 +140,6 @@ button:hover {
 }
 
 .module {
-	border-radius: 5px;
 	padding: 2px;
 }
 
