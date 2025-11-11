@@ -2,85 +2,84 @@ import subprocess
 
 def read_colors():
     props = {}
-    x = subprocess.run(['/home/eduardo/.config/scripts/themectl', 'color', 'all', 'no_color', 'no_fmt'], capture_output=True, check=True, text=True)
+    x = subprocess.run(['themecolor', 'all', 'no_color', 'no_fmt'], capture_output=True, check=True, text=True)
     lines = x.stdout.split('\n')
     for line in lines:
         prop, _, value = line.partition(':')
         props[prop] = value
     return props
 
-xresources = read_colors()
+themecolor = read_colors()
 
 c.aliases = {'w': 'session-save', 'q': 'close', 'qa': 'quit', 'wq': 'quit --save', 'wqa': 'quit --save'}
 c.backend = 'webengine'
 c.changelog_after_upgrade = 'patch'
-c.url.searchengines = {'DEFAULT': 'https://search.brave.com/search?q={}&source=web'}
-c.url.start_pages = ['https://search.brave.com/']
+c.url.searchengines = {'DEFAULT': 'https://kagi.com/search?q={}'}
+c.url.start_pages = ['https://kagi.com/']
 c.downloads.location.directory = '$HOME/Downloads'
 
-c.colors.statusbar.normal.bg = xresources["background"]
-c.colors.statusbar.command.bg = xresources["background"]
-c.colors.statusbar.command.fg = xresources["foreground"]
-c.colors.statusbar.normal.fg = xresources["color14"]
-c.colors.statusbar.passthrough.fg = xresources["color14"]
-c.colors.statusbar.url.fg = xresources["color13"]
-c.colors.statusbar.url.success.https.fg = xresources["color13"]
-c.colors.statusbar.url.hover.fg = xresources["color12"]
+c.colors.statusbar.normal.bg = themecolor["background"]
+c.colors.statusbar.command.bg = themecolor["background"]
+c.colors.statusbar.command.fg = themecolor["foreground"]
+c.colors.statusbar.normal.fg = themecolor["color14"]
+c.colors.statusbar.passthrough.fg = themecolor["color14"]
+c.colors.statusbar.url.fg = themecolor["color13"]
+c.colors.statusbar.url.success.https.fg = themecolor["color13"]
+c.colors.statusbar.url.hover.fg = themecolor["color12"]
 # c.statusbar.show = "always"
 # c.colors.tabs.even.bg = "#00000000" # transparent tabs!!
 # c.colors.tabs.odd.bg = "#00000000"
 # c.colors.tabs.bar.bg = "#00000000"
-c.colors.tabs.even.bg = xresources["background"]
-c.colors.tabs.odd.bg = xresources["background"]
-c.colors.tabs.even.fg = xresources["foreground"]
-c.colors.tabs.odd.fg =  xresources["foreground"]
-c.colors.tabs.selected.even.bg = xresources["selection_background"]
-c.colors.tabs.selected.odd.bg = xresources["selection_background"]
-c.colors.tabs.selected.even.fg = xresources["selection_foreground"]
-c.colors.tabs.selected.odd.fg = xresources["selection_foreground"]
-c.colors.hints.bg = xresources["background"]
-c.colors.hints.fg = xresources["foreground"]
+c.colors.tabs.even.bg = themecolor["background"]
+c.colors.tabs.odd.bg = themecolor["background"]
+c.colors.tabs.even.fg = themecolor["foreground"]
+c.colors.tabs.odd.fg =  themecolor["foreground"]
+c.colors.tabs.selected.even.bg = themecolor["foreground"]
+c.colors.tabs.selected.odd.bg = themecolor["foreground"]
+c.colors.tabs.selected.even.fg = themecolor["background"]
+c.colors.tabs.selected.odd.fg = themecolor["background"]
+c.colors.hints.bg = themecolor["background"]
+c.colors.hints.fg = themecolor["foreground"]
 c.tabs.show = "multiple"
 
-c.colors.completion.item.selected.match.fg = xresources["color6"]
-c.colors.completion.match.fg = xresources["color6"]
+c.colors.completion.item.selected.match.fg = themecolor["color6"]
+c.colors.completion.match.fg = themecolor["color6"]
 
-c.colors.tabs.indicator.start = xresources["color10"]
-c.colors.tabs.indicator.stop = xresources["color8"]
-c.colors.completion.odd.bg = xresources["background"]
-c.colors.completion.even.bg = xresources["background"]
-c.colors.completion.fg = xresources["foreground"]
-c.colors.completion.category.bg = xresources["background"]
-c.colors.completion.category.fg = xresources["foreground"]
-c.colors.completion.item.selected.bg = xresources["background"]
-c.colors.completion.item.selected.fg = xresources["foreground"]
+c.colors.tabs.indicator.start = themecolor["color10"]
+c.colors.tabs.indicator.stop = themecolor["color8"]
+c.colors.completion.odd.bg = themecolor["background"]
+c.colors.completion.even.bg = themecolor["background"]
+c.colors.completion.fg = themecolor["foreground"]
+c.colors.completion.category.bg = themecolor["background"]
+c.colors.completion.category.fg = themecolor["foreground"]
+c.colors.completion.item.selected.bg = themecolor["background"]
+c.colors.completion.item.selected.fg = themecolor["foreground"]
 
-c.colors.messages.info.bg = xresources["background"]
-c.colors.messages.info.fg = xresources["foreground"]
-c.colors.messages.error.bg = xresources["background"]
-c.colors.messages.error.fg = xresources["foreground"]
-c.colors.downloads.error.bg = xresources["background"]
-c.colors.downloads.error.fg = xresources["foreground"]
+c.colors.messages.info.bg = themecolor["background"]
+c.colors.messages.info.fg = themecolor["foreground"]
+c.colors.messages.error.bg = themecolor["background"]
+c.colors.messages.error.fg = themecolor["foreground"]
+c.colors.downloads.error.bg = themecolor["background"]
+c.colors.downloads.error.fg = themecolor["foreground"]
 
-c.colors.downloads.bar.bg = xresources["background"]
-c.colors.downloads.start.bg = xresources["color10"]
-c.colors.downloads.start.fg = xresources["foreground"]
-c.colors.downloads.stop.bg = xresources["color8"]
-c.colors.downloads.stop.fg = xresources["foreground"]
+c.colors.downloads.bar.bg = themecolor["background"]
+c.colors.downloads.start.bg = themecolor["color10"]
+c.colors.downloads.start.fg = themecolor["foreground"]
+c.colors.downloads.stop.bg = themecolor["color8"]
+c.colors.downloads.stop.fg = themecolor["foreground"]
 
-c.colors.tooltip.bg = xresources["background"]
-c.colors.webpage.bg = xresources["background"]
-c.hints.border = xresources["foreground"]
+c.colors.tooltip.bg = themecolor["background"]
+c.colors.webpage.bg = themecolor["background"]
+c.hints.border = themecolor["foreground"]
 
-# c.url.start_pages = ""
-# c.url.default_page = ""
+c.url.start_pages = "https://kagi.com/search/"
+c.url.default_page = "https://kagi.com/search/"
 
 c.tabs.title.format = "{audio}{current_title}"
 c.fonts.web.size.default = 20
 
 c.url.searchengines = {
-# note - if you use duckduckgo, you can make use of its built in bangs, of which there are many! https://duckduckgo.com/bangs
-        'DEFAULT': 'https://duckduckgo.com/?q={}',
+        'DEFAULT': 'https://kagi.com/search?q={}',
         '!aw': 'https://wiki.archlinux.org/?search={}',
         '!apkg': 'https://archlinux.org/packages/?sort=&q={}&maintainer=&flagged=',
         '!gh': 'https://github.com/search?o=desc&q={}&s=stars',
@@ -110,11 +109,14 @@ config.bind('gJ', 'tab-move +')
 config.bind('gK', 'tab-move -')
 config.bind('gm', 'tab-move')
 
+config.bind('<ctrl-j>', 'completion-item-focus --history next', mode="command")
+config.bind('<ctrl-k>', 'completion-item-focus --history prev', mode="command")
+
 # dark mode setup
-c.colors.webpage.darkmode.enabled = True
-c.colors.webpage.darkmode.algorithm = 'lightness-cielab'
-c.colors.webpage.darkmode.policy.images = 'never'
-config.set('colors.webpage.darkmode.enabled', False, 'file://*')
+# c.colors.webpage.darkmode.enabled = True
+# c.colors.webpage.darkmode.algorithm = 'lightness-cielab'
+# c.colors.webpage.darkmode.policy.images = 'never'
+# config.set('colors.webpage.darkmode.enabled', False, 'file://*')
 
 # styles, cosmetics
 c.content.user_stylesheets = ["~/.config/qutebrowser/styles/youtube-tweaks.css"]
@@ -125,7 +127,7 @@ c.tabs.width = '7%'
 
 # fonts
 c.fonts.default_family = []
-c.fonts.default_size = '11pt'
+c.fonts.default_size = '10pt'
 c.fonts.web.family.fixed = 'monospace'
 c.fonts.web.family.sans_serif = 'monospace'
 c.fonts.web.family.serif = 'monospace'
