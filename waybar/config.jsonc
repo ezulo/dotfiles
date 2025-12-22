@@ -4,10 +4,10 @@
     "position": "top",
     "height": 30,
     "spacing": 5, 
-	"margin-top": 10,
-	"margin-right": 20,
+	"margin-top": 0,
+	"margin-right": 0,
 	"margin-bottom": 0,
-	"margin-left": 20,
+	"margin-left": 0,
     // Choose the order of the modules
     "modules-left": [
         "hyprland/workspaces",
@@ -16,7 +16,8 @@
     ],
     "modules-right": [
         "idle_inhibitor",
-        "custom/mpd",
+        "custom/ollama",
+        // "custom/mpd",
         "power-profiles-daemon",
         "temperature",
         "cpu",
@@ -28,7 +29,7 @@
         "sway/language",
         "network",
         "tray",
-        "custom/zeit",
+        // "custom/zeit",
         "clock"
         // "disk", // this kinda sucks as is
         // "keyboard-state", // doesn't work right (yet!)
@@ -179,7 +180,7 @@
             "car": "",
             "default": ["", "", ""]
         },
-        "on-click": "pavucontrol"
+        "on-click": "wiremix"
     },
     "custom/power": {
         "format" : "⏻ ",
@@ -193,19 +194,24 @@
 			"hibernate": "systemctl hibernate"
 		}
     },
-    "custom/zeit": {
-        "format": "",
-        "format-alt": "{text} ",
-        "tooltip-format": "{text}",
-        "interval": 1,
-        "exec": "zeit-get",
-        "exec-if": "mpc"
+    //"custom/zeit": {
+    //    "format": "",
+    //    "format-alt": "{text} ",
+    //    "tooltip-format": "{text}",
+    //    "interval": 1,
+    //    "exec": "zeit-get",
+    //},
+    "custom/ollama": {
+        "format": "{} 󰧑",
+        "interval": 5,
+        "exec": "echo ollama",
+        "exec-if": "pgrep -x ollama"
     },
     "custom/mpd": {
         "format": "{text}  ",
-        "exec": "mpd-info",
+        "exec": "mpd-info 2> /dev/null",
         "interval": 1,
-        "on-click": "kitty-cmd ncmpcpp"
+        "on-click": "floating-term --no-output ncmpcpp"
     },
     "hyprland/window": {
 		"separate-outputs": true
