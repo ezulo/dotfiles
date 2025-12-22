@@ -27,10 +27,19 @@ dunst/dunstrc
 **/*.licensed.png
 
 # Application Specific
+BraveSoftware/
 FreeCAD/
 QtProject.conf
 Thunar/
+htop/
+inkscape/
+kritarc/
+kritadisplayrc/
+libreoffice/
 xfce4/ 
+
+# AI Assistances
+CLAUDE.md
 
 # Things not yet ready for check-in / don't belong in this repo
 btop/
