@@ -27,15 +27,26 @@ dunst/dunstrc
 **/*.licensed.png
 
 # Application Specific
+.android/
 BraveSoftware/
 FreeCAD/
+GIMP/
+Google/
 QtProject.conf
 Thunar/
+bruno/
+darktable/
+dconf/
+godot/
 htop/
 inkscape/
-kritarc/
-kritadisplayrc/
+kritarc
+kritadisplayrc
 libreoffice/
+mozilla/
+pulse/
+user-dirs.dirs
+user-dirs.locale
 xfce4/ 
 
 # AI Assistances

@@ -16,6 +16,9 @@ export PATH
 export THEME_HOME="$HOME/.config/theme"
 export ZMENU_INCLUDE_DIR="$XDG_CONFIG_HOME/.config/scripts/include"
 
-# Hyprland
-export HYPRLAND_CONFIG="$HOME/.config/hypr/hypr.conf"
+# Hyprland Configs (used in keybinds + theming scripts)
+export HYPRIDLE_CONFIG="$XDG_CONFIG_HOME/hypr/hypridle.conf"
+export HYPRLAND_CONFIG="$XDG_CONFIG_HOME/hypr/hyprland.conf"
+export HYPRLOCK_CONFIG="$XDG_CONFIG_HOME/hypr/hyprlock.conf"
+export HYPRPAPER_CONFIG="$XDG_CONFIG_HOME/hypr/hyprpaper.conf"
 
