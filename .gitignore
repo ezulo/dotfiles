@@ -49,6 +49,7 @@ pulse/
 user-dirs.dirs
 user-dirs.locale
 xfce4/ 
+unity3d/
 
 # Reference files
 kitty/kitty.conf.reference
