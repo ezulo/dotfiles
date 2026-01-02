@@ -3,57 +3,39 @@
 * {
     font-family: Jetbrains Mono Nerd Font;
     font-size: 13px;
+    padding: 0;
+    margin: 0;
 }
 
 window#waybar {
 	background-color: @color-background;
-    color: @color-background;
+    color: @color-foreground;
     transition-property: background-color;
     transition-duration: .5s;
 }
 
-window#waybar.hidden {
-    opacity: 0.2;
-}
-
-/*
-window#waybar.empty {
-    background-color: transparent;
-}
-window#waybar.solo {
-    background-color: @color-background;
-}
-*/
-
 button {
-    /* Use box-shadow instead of border so the text isn't offset */
-    box-shadow: inset 0 -3px transparent;
-    /* Avoid rounded borders under each button name */
     border: none;
 }
 
-/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 button:hover {
     background: inherit;
-    box-shadow: inset 0 -3px #ffffff;
 }
 
 #workspaces button {
-    padding: 3px 5px;
+    padding: 0px 5px;
     background-color: transparent;
     color: @color-foreground;
+    border-radius: 0px;
 }
 
 #workspaces button:hover {
-    box-shadow: inherit;
-    text-shadow: inherit;
     background-image: linear-gradient(@color15, @color7);
     color: @color0;
 }
 
 #workspaces button.focused {
-    background-color: #64727D;
-    box-shadow: inset 0 -3px #ffffff;
+    background-color: @color5;
 }
 
 #workspaces button.active {
@@ -63,28 +45,18 @@ button:hover {
 }
 
 #workspaces button.urgent {
-    background-color: #eb4d4b;
+    background-color: @color1;
 }
 
 
-#submap {
-    padding: 3px 5px;
-    background-image: linear-gradient(@color15, @color7);
-    color: @color5;
-    font-weight: bold;
-}
 
 #mode {
     background-color: #64727D;
-    box-shadow: inset 0 -3px #ffffff;
 }
 
 #clock,
 #battery,
-#cpu,
-#memory,
 #disk,
-#temperature,
 #backlight,
 #network,
 #pulseaudio,
@@ -96,42 +68,46 @@ button:hover {
 #power-profiles-daemon,
 #custom-mpd,
 #custom-ollama {
-    padding: 0 7px;
-    color: @color-background;
+    font-weight: bold;
+    padding: 0 10px;
+    color: @color-foreground;
+    background-color: @color-background;
+}
+
+/* Submap */
+#submap {
+    padding: 0px 10px;
+    color: @color0;
+    background-image: linear-gradient(@color15, @color7);
+    font-weight: bold;
+}
+
+/* Specific padding rules for odd glyph renderings */
+#temperature,
+#memory,
+#cpu {
+   padding: 0 12px 0 10px; 
 }
 
 #idle_inhibitor {
-    background-color: @color8;
     padding: 0px 15px 0px 10px;
 }
-
 #idle_inhibitor.activated {
     background-color: @color7;
     color: @color8;
 }
 
-#custom-ollama {
-    background-color: @color8;
-    color: @color-foreground;
-    padding: 0 10px;
-}
-
 #window,
 #workspaces {
-    margin: 0 5px;
+    margin: 0;
+    padding: 0;
 	color: @color-foreground;
     font-weight: bold;
 }
 
 #window {
     color: @color-foreground;
-    box-shadow: inset 0 -3px;
-}
-
-/* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > #workspaces {
-    margin-left: 0;
-	margin-right: 0;
+    padding: 0 10px;
 }
 
 .modules-left > widget {
@@ -145,29 +121,10 @@ button:hover {
 
 .modules-right {
     background-color: @color-background;
-	padding: 3px 0px;
-}
-
-.modules-right > widget:first-child > .module {
-    margin-left: 5px;
 }
 
 .module {
 	padding: 2px;
-}
-
-#clock {
-	color: @color8;
-    background-color: @color15;
-    font-weight: bold;
-    margin-right: 5px;
-    padding-left: 10px;
-}
-
-#battery {
-    color: @color0;
-    background-color: @color11;
-    padding-right: 10px;
 }
 
 #battery.charging, #battery.plugged {
@@ -214,39 +171,8 @@ label:focus {
     background-color: #000000;
 }
 
-#cpu {
-    background-color: @color14;
-    padding-right: 10px;
-}
-
-#memory {
-    background-color: @color14;
-    padding-right: 10px;
-}
-
-#backlight {
-    background-color: @color3;
-    padding-right: 10px;
-}
-
-#network {
-    background-color: @color2;
-}
-
 #network.disconnected {
-    background-color: @color7;
-}
-
-#pulseaudio {
-    background-color: @color3;
-}
-
-#pulseaudio.muted {
-    background-color: @color7;
-}
-
-#temperature {
-    background-color: @color14;
+    color: @color8;
 }
 
 #temperature.critical {
@@ -258,19 +184,6 @@ label:focus {
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
-
-#tray {
-    background-color: @color2;
-}
-
-#tray > .passive {
-    -gtk-icon-effect: dim;
-}
-
-#tray > .needs-attention {
-    -gtk-icon-effect: highlight;
-}
-
 
 #keyboard-state {
     background: @color7;
@@ -306,29 +219,15 @@ label:focus {
 }
 
 #privacy-item.screenshare {
-    background-color: #cf5700;
+    background-color: @color9;
 }
 
 #privacy-item.audio-in {
-    background-color: #1ca000;
+    background-color: @color10;
 }
 
 #privacy-item.audio-out {
-    background-color: #0069d4;
-}
-
-#custom-power {
-	font-size: 15px;
-	background-color: @color1;
-	color: @color0;
-	padding-left: 14px;
-	padding-right: 0;
-	margin-right: 10px;
-}
-
-#custom-zeit {
-    background-color: @color-background;
-    color: @color-foreground;
+    background-color: @color12;
 }
 
 @import 'theme/style.css';

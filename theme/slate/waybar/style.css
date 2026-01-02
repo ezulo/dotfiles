@@ -16,12 +16,19 @@
 }
 
 /* modules-right styling */
-.modules-right { background-color: rgba(42,42,42,0.6);}
-.modules-right > widget > label {border: 0}
-.modules-right > widget > box {border: 0}
+.modules-right {
+    background-color: transparent;
+}
+.modules-right > widget > label {
+    border: 0;
+}
+.modules-right > widget > box {
+    border: 0;
+}
 
 #temperature,
 #cpu,
+#clock,
 #memory,
 #network,
 #tray,
@@ -30,13 +37,16 @@
 #battery.charging,
 #battery.plugged, 
 #battery,
-#custom-mpd {
-    background: linear-gradient(@color8, @color0);
-    color: @color7;
+#custom-mpd,
+#idle_inhibitor {
+    background-color: @color-background;
+    color: @color-foreground;
+    font-weight: bold;
 }
 
 #temperature:hover,
 #cpu:hover,
+#clock:hover,
 #memory:hover,
 #network:hover,
 #tray:hover,
@@ -45,7 +55,8 @@
 #battery.charging:hover,
 #battery.plugged:hover,
 #battery:hover,
-#custom-mpd:hover {
+#custom-mpd:hover,
+#idle_inhibitor:hover {
     background: linear-gradient(@color15, @color7);
     color: @color0;
 }
@@ -72,17 +83,5 @@
 #network.disconnected {
     background: none;
     background-color: @color7;
-}
-
-#clock {
-    color: @color0;
-    background: linear-gradient(@color15, @color7);
-    margin-right: 5;
-}
-
-#custom-zeit {
-    background-color: @color0;
-    color: @color5;
-    font-weight: bold;
 }
 
