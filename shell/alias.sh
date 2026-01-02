@@ -1,7 +1,7 @@
 # Wrappers
 alias ls='ls --color=auto --group-directories-first'
 alias grep='grep --color=auto'
-alias sudo='doas'
+# alias sudo='doas'
 
 # Hyprland
 alias hyprlog='tail -f '"$HYPRLAND_LOG_FILE"
