@@ -50,6 +50,9 @@ user-dirs.dirs
 user-dirs.locale
 xfce4/ 
 
+# Reference files
+kitty/kitty.conf.reference
+
 # AI Assistances
 CLAUDE.md
 
