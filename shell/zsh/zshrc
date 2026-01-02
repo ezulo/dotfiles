@@ -1,0 +1,50 @@
+#!/bin/zsh
+
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
+
+zstyle :compinstall filename '/home/eduardo/.zshrc'
+autoload -Uz compinit
+compinit
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.zsh_history
+HISTSIZE=1000
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+setopt appendhistory
+setopt hist_ignore_all_dups
+setopt hist_ignore_dups
+setopt hist_save_no_dups
+setopt hist_find_no_dups
+setopt hist_ignore_space
+setopt autocd
+setopt extendedglob
+setopt nomatch
+setopt notify
+unsetopt beep
+bindkey -v
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
+
+setopt interactivecomments
+# source ~/zsh_plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+source ~/zsh_plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/zsh_plugins/powerlevel10k/powerlevel10k.zsh-theme
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# source files
+source ~/.config/shell/alias.sh
+source ~/.config/shell/env.sh
+
+COMPLETION_WAITING_DOTS="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
