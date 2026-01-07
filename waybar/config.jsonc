@@ -11,7 +11,7 @@
     // Choose the order of the modules
     "modules-left": [
         "hyprland/workspaces",
-        "hyprland/window",
+        "custom/taskbar",
         "hyprland/submap"
     ],
     "modules-right": [
@@ -29,29 +29,8 @@
         "sway/language",
         "network",
         "tray",
-        // "custom/zeit",
         "clock"
-        // "disk", // this kinda sucks as is
-        // "keyboard-state", // doesn't work right (yet!)
-        // "custom/power" // segfaults
     ],
-    // Modules configuration
-    // "sway/workspaces": {
-    //     "disable-scroll": true,
-    //     "all-outputs": true,
-    //     "warp-on-scroll": false,
-    //     "format": "{name}: {icon}",
-    //     "format-icons": {
-    //         "1": "",
-    //         "2": "",
-    //         "3": "",
-    //         "4": "",
-    //         "5": "",
-    //         "urgent": "",
-    //         "focused": "",
-    //         "default": ""
-    //     }
-    // },
     "keyboard-state": {
         "numlock": true,
         "capslock": true,
@@ -136,7 +115,6 @@
         "format-charging": "{capacity}% {icon} 󱐋",
         "format-plugged": "{capacity}% {icon}",
         "format-alt": "{time} {icon}",
-        //"format-good": "", // An empty format will hide the module
         "format-full": "full {icon} 󱐋" ,
         "format-icons": ["", "", "", "", ""]
     },
@@ -182,25 +160,6 @@
         },
         "on-click": "wiremix"
     },
-    //"custom/power": {
-    //    "format" : "⏻ ",
-	//	"tooltip": false,
-	//	"menu": "on-click",
-	//	"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
-	//	"menu-actions": {
-	//		"shutdown": "shutdown",
-	//		"reboot": "reboot",
-	//		"suspend": "systemctl suspend",
-	//		"hibernate": "systemctl hibernate"
-	//	}
-    //},
-    //"custom/zeit": {
-    //    "format": "",
-    //    "format-alt": "{text} ",
-    //    "tooltip-format": "{text}",
-    //    "interval": 1,
-    //    "exec": "zeit-get",
-    //},
     "custom/ollama": {
         "format": "{} 󰧑",
         "interval": 5,
@@ -213,11 +172,14 @@
         "interval": 1,
         "on-click": "floating-term --no-output ncmpcpp"
     },
-    "hyprland/window": {
-		"separate-outputs": true
+    "custom/taskbar": {
+        "exec": "~/.config/waybar/taskbar.sh",
+        "return-type": "json",
+        "on-click": "hyprctl dispatch focuswindow next",
+        "on-click-right": "hyprctl dispatch focuswindow prev"
     },
-	"hyprland/workspaces": {
-	},
+    "hyprland/workspaces": {
+    },
     "hyprland/submap": {
         "format": "MODE: {}",
         "tooltip": "true"

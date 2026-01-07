@@ -90,7 +90,7 @@ button:hover {
 }
 
 #idle_inhibitor {
-    padding: 0px 15px 0px 10px;
+    padding: 0px 16px 0px 9px;
 }
 #idle_inhibitor.activated {
     background-color: @color7;
@@ -107,6 +107,16 @@ button:hover {
 
 #window {
     color: @color-foreground;
+    padding: 0 10px;
+}
+
+/* Custom Taskbar */
+#custom-taskbar {
+    padding: 0 10px;
+    color: @color-foreground;
+}
+
+#custom-taskbar.has-windows {
     padding: 0 10px;
 }
 
