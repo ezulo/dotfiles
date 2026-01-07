@@ -2,13 +2,18 @@
 # Custom taskbar for waybar - shows windows in current workspace
 # Event-driven using Hyprland IPC socket
 
+TITLE_MAX_LEN=30
+
 # Map app titles to nerd font icons (shell applications)
 icon_by_title() {
   local title="$1"
   case "${title,,}" in
     nvim*) echo "" ;;
-    launcher) echo "󰍝" ;;
+    launcher*) echo "󰈸" ;;
+    btop|htop) echo "󰨇" ;;
     notes) echo "" ;;
+    session) echo "󰐥" ;;
+    bash|zsh|fish) echo "" ;;
     *) echo "" ;;
   esac
 }
@@ -17,40 +22,40 @@ icon_by_title() {
 icon_by_class() {
     local class="$1"
     case "${class,,}" in
-        firefox|librewolf|floorp) echo "" ;;
+        firefox|librewolf|floorp) echo "" ;;
         zen-browser|zen) echo "󰰶" ;;
         chromium|google-chrome*|brave*) echo "󰖟" ;;
-        kitty) echo "";;
-        alacritty|foot|wezterm|terminator|gnome-terminal) echo "" ;;
+        alacritty|kitty|ghostty) echo "";;
         code|code-oss|vscodium) echo "󰨞" ;;
-        neovide) echo "" ;;
-        thunar|nautilus|dolphin|nemo|pcmanfm) echo "" ;;
-        spotify) echo "" ;;
+        bruno|insomnia|postman) echo "" ;;
+        thunar|nautilus|dolphin|nemo|pcmanfm) echo "" ;;
+        spotify) echo "" ;;
         discord) echo "󰙯" ;;
         slack) echo "󰒱" ;;
-        telegram*) echo "" ;;
         steam) echo "" ;;
         gimp) echo "" ;;
         krita) echo "" ;;
-        inkscape) echo "" ;;
+        *inkscape*) echo "" ;;
         blender) echo "󰂫" ;;
-        obs) echo "" ;;
+        obs) echo "" ;;
         mpv|vlc|celluloid) echo "" ;;
-        zathura|evince|okular) echo "" ;;
-        qutebrowser) echo "" ;;
-        libreoffice*) echo "󰈙" ;;
-        godot*) echo "" ;;
-        unity*) echo "" ;;
-        transmission*|qbittorrent) echo "󰥻" ;;
-        signal*) echo "󰭹" ;;
-        thunderbird) echo "" ;;
-        *) echo "" ;;
+        zathura|evince|okular) echo "󰈙" ;;
+        qutebrowser) echo "󰖟" ;;
+        libreoffice|soffice) echo "󰈙" ;;
+        libreoffice-calc) echo "" ;;
+        libreoffice-draw) echo "" ;;
+        libreoffice-impress) echo "" ;;
+        libreoffice-write) echo "" ;;
+        godot*) echo "" ;;
+        unity*) echo "" ;;
+        jetbrains-studio) echo "󰀴" ;;
+        *) echo "󰣆" ;;
     esac
 }
 
 truncate_title() {
     local title="$1"
-    local max_len="${2:-20}"
+    local max_len="${TITLE_MAX_LEN:-20}"
     if [ ${#title} -gt $max_len ]; then
         echo "${title:0:$((max_len-1))}…"
     else
@@ -84,7 +89,7 @@ output_taskbar() {
     focused_addr=$(hyprctl activewindow -j 2>/dev/null | jq -r '.address')
 
     local sep
-    sep=" "
+    sep=""
     while IFS= read -r client; do
         local class title addr
         class=$(echo "$client" | jq -r '.class')
@@ -96,7 +101,7 @@ output_taskbar() {
         if [ -z "$icon" ]; then icon=$(icon_by_class "$class"); fi
 
         local short_title
-        short_title=$(truncate_title "$title" 20)
+        short_title=$(truncate_title "$title")
 
         base_text="$icon $short_title"
         if [ "$addr" = "$focused_addr" ]; then
