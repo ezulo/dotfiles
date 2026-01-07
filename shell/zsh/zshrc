@@ -48,3 +48,7 @@ source ~/.config/shell/env.sh
 
 COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Set terminal title to running command (for tmux/terminal)
+preexec() { print -Pn "\e]2;$1\a" }
+precmd() { print -Pn "\e]2;%~\a" }
