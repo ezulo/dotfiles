@@ -21,7 +21,7 @@ icon_by_title() {
 # Map app classes to nerd font icons
 icon_by_class() {
     local class="$1"
-    case "${class,,}" in
+    case "$class" in
         firefox|librewolf|floorp) echo "" ;;
         zen-browser|zen) echo "󰰶" ;;
         chromium|google-chrome*|brave*) echo "󰖟" ;;
@@ -49,6 +49,7 @@ icon_by_class() {
         godot*) echo "" ;;
         unity*) echo "" ;;
         jetbrains-studio) echo "󰀴" ;;
+        SFML*) echo "" ;;
         *) echo "󰣆" ;;
     esac
 }
