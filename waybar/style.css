@@ -74,6 +74,13 @@ button:hover {
     background-color: @color-background;
 }
 
+/* A little extra padding for these, due to glyph weirdness */
+#battery,
+#backlight,
+#clock {
+  padding-right: 15px;
+}
+
 /* Submap */
 #submap {
     padding: 0px 10px;
