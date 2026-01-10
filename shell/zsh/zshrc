@@ -30,7 +30,7 @@ setopt extendedglob
 setopt nomatch
 setopt notify
 unsetopt beep
-bindkey -v
+bindkey -e
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 

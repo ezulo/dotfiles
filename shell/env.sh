@@ -1,5 +1,5 @@
 export ARCHFLAGS="-arch $(uname -m)"
-export MANPATH="/usr/local/man:$MANPATH"
+export MANPATH="/usr/local/man:${MANPATH#/usr/local/man:}"
 export LANG=en_US.utf8
 export LC_ALL=en_US.utf8
 if [[ -n $SSH_CONNECTION ]]; then
