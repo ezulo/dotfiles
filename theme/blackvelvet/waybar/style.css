@@ -1,8 +1,0 @@
-#workspaces button.active {
-    background-image: linear-gradient(@color1, @color5)
-}
-
-#idle_inhibitor.activated {
-    background-image: linear-gradient(@color1, @color5); font-weight: bold
-}
-
