@@ -6,7 +6,8 @@
     "cursor": "#7A9A7A",
     "selection_background": "#6B9AA8",
     "selection_foreground": "#ffffff",
-    "alert": "#ff6347"
+    "alert": "#ff6347",
+    "warning": "#ffd700"
   },
   "colors": {
     "color0": "#2E2E2E",
