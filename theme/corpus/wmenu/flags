@@ -1,0 +1,8 @@
+-f {_WMENU_FONT_}
+-l {_WMENU_LINES_}
+-N {_COLOR_0_}{_WMENU_ALFA_}
+-n {_COLOR_7_}
+-M {_COLOR_0_}{_WMENU_ALFA_}
+-m {_COLOR_9_}
+-S {_COLOR_7_}{_WMENU_ALFA_}
+-s {_COLOR_0_}

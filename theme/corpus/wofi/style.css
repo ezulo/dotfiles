@@ -1,0 +1,53 @@
+/*
+ * Default theme wofi config file
+ *
+ * wofi is alot like rofi in its config, though it uses CSS instead of rasi.
+ * This file is imported at the bottom of default wofi styles.
+ * Specificity applies. Useful list of selectors at this URL:
+ * https://cloudninja.pw/docs/wofi.html
+ *
+ * Note that the @import directive must be absolute paths due to a GTK
+ * technicality. The absolute path to a generated colors.css will be injected
+ * into the _COLORS_CSS_ marker below.
+ *
+ */
+
+@import "{_COLORS_CSS_}";
+
+* {
+    font-family: monospace;
+}
+
+window {
+    color: @color-foreground;
+    background-color: @color-background;
+    border: 3px solid @color3;
+    border-radius: 5px;
+}
+
+#entry {
+}
+
+#entry:selected {
+    background-color: @color-selection-background;
+}
+
+#text:selected {
+    color: @color-selection-foreground;
+}
+
+#text {
+    padding: 0px 20px;
+}
+
+#input {
+    background-color: rgba(0,0,0,0);
+    margin: 20px;
+    color: @color-foreground;
+    border-radius: 0;
+}
+
+#inner-box {
+    border-top: 1px solid @color-foreground;
+}
+

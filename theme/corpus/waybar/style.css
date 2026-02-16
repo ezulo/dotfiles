@@ -1,0 +1,9 @@
+/*
+ * This is the default waybar theme CSS file.
+ *
+ * CSS rules in this file will be included at the end of waybar's `style.css`.
+ * Note that CSS specificity rules apply. Rules that are less specific than
+ * those in the default `style.css` will not apply.
+ */
+@import 'colors.css';
+
