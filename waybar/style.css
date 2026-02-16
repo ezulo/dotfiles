@@ -75,7 +75,7 @@ button:hover {
 }
 
 /* A little extra padding for these, due to glyph weirdness */
-#battery,
+#battery:not(.charging),
 #backlight,
 #clock {
   padding-right: 15px;
@@ -190,6 +190,15 @@ label:focus {
 
 #network.disconnected {
     color: @color8;
+}
+
+#temperature.warning {
+    color: @color-warning;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
 #temperature.critical {

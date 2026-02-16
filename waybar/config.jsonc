@@ -23,7 +23,6 @@
         "cpu",
         "memory",
         "battery",
-        "battery#bat2",
         "pulseaudio",
         "backlight",
         "sway/language",
@@ -92,10 +91,8 @@
         "format": "{}% "
     },
     "temperature": {
-        // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-        "critical-threshold": 80,
-        // "format-critical": "{temperatureC}°C {icon}",
+        "warning-threshold": 80,
+        "critical-threshold": 95,
         "format": "{temperatureC}°C {icon}",
         "format-icons": ["", "", "", ""]
     },
@@ -113,13 +110,10 @@
         "format": "{capacity}% {icon}",
         "format-full": "{capacity}% {icon}",
         "format-charging": "{capacity}% {icon} 󱐋",
-        "format-plugged": "{capacity}% {icon}",
+        "format-plugged": "{capacity}% {icon} ",
         "format-alt": "{time} {icon}",
         "format-full": "full {icon} 󱐋" ,
         "format-icons": ["", "", "", "", ""]
-    },
-    "battery#bat2": {
-        "bat": "BAT2"
     },
     "power-profiles-daemon": {
       "format": "{icon}",
