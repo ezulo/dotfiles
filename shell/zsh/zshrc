@@ -34,6 +34,11 @@ bindkey -e
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 
+
+bindkey  "^[[1~"   beginning-of-line
+bindkey  "^[[4~"   end-of-line
+bindkey  "^[[3~"  delete-char
+
 setopt interactivecomments
 # source ~/zsh_plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 source ~/zsh_plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -52,3 +57,5 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Set terminal title to running command (for tmux/terminal)
 preexec() { print -Pn "\e]2;$1\a" }
 precmd() { print -Pn "\e]2;%~\a" }
+
+. "$HOME/.local/share/../bin/env"
