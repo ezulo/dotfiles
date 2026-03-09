@@ -29,8 +29,14 @@ dunst/dunstrc
 
 # Application Specific
 .android/
+blender/
+calibre/
+clangd/
 BraveSoftware/
 FreeCAD/
+kicad/
+git/
+gtk-3.0/
 GIMP/
 Google/
 QtProject.conf
@@ -46,8 +52,10 @@ kritadisplayrc
 libreoffice/
 mozilla/
 pulse/
+ranger/
 user-dirs.dirs
 user-dirs.locale
+uv/
 xfce4/ 
 unity3d/
 
