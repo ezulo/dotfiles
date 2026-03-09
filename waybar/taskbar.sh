@@ -74,7 +74,7 @@ output_taskbar() {
     fi
 
     local clients
-    clients=$(hyprctl clients -j 2>/dev/null | jq -c --argjson ws "$workspace_id" '[.[] | select(.workspace.id == $ws and .mapped == true)]')
+    clients=$(hyprctl clients -j 2>/dev/null | jq -c --argjson ws "$workspace_id" '[.[] | select(.workspace.id == $ws and .mapped == true and (.class | test("^ueberzugpp") | not))]')
 
     local count
     count=$(echo "$clients" | jq 'length')
