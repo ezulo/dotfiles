@@ -7,3 +7,91 @@
  */
 @import 'colors.css';
 
+/*
+ * THEME: corpus
+ */
+
+#workspaces button {color: @color2}
+#workspaces button.active {
+    background-image: linear-gradient(@color2, @color10);
+    color: @color-background;
+}
+
+/* Style our stay-awake */
+#idle_inhibitor.activated {
+    color: @color0;
+    background-image: linear-gradient(@color10, @color2);
+    font-weight: bold;
+}
+
+/* modules-right styling */
+.modules-right {
+    background-color: transparent;
+}
+.modules-right > widget > label {
+    border: 0;
+}
+.modules-right > widget > box {
+    border: 0;
+}
+
+#temperature,
+#cpu,
+#clock,
+#memory,
+#network,
+#tray,
+#pulseaudio,
+#backlight,
+#battery.charging,
+#battery.plugged, 
+#battery,
+#custom-mpd,
+#idle_inhibitor {
+    background-color: @color-background;
+    color: @color-foreground;
+    font-weight: bold;
+}
+
+#temperature:hover,
+#cpu:hover,
+#clock:hover,
+#memory:hover,
+#network:hover,
+#tray:hover,
+#pulseaudio:hover,
+#backlight:hover,
+#battery.charging:hover,
+#battery.plugged:hover,
+#battery:hover,
+#custom-mpd:hover,
+#idle_inhibitor:hover {
+    background: linear-gradient(@color15, @color7);
+    color: @color0;
+}
+
+#battery.charging {
+    color: @color10;
+}
+
+@keyframes blink {
+    to { color: @color15 }
+}
+
+#battery.critical:not(.charging)
+{
+  color: @color9;
+  animation: blink 0.5s steps(2,start) infinite;
+}
+
+.modules-right > widget > box:hover {
+    background: linear-gradient(@color15, @color7);
+    color: @color0;
+}
+
+#network.disconnected {
+    background: none;
+    background-color: @color7;
+}
+
+
