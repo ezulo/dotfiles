@@ -1,15 +1,9 @@
 #!/bin/zsh
 
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# Disable partial line marker (the '%' shown for output without trailing newline)
+PROMPT_EOL_MARK=''
 
-POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
-
-zstyle :compinstall filename '/home/eduardo/.zshrc'
+zstyle :compinstall filename "$ZDOTDIR/.zshrc"
 autoload -Uz compinit
 compinit
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
@@ -30,6 +24,7 @@ setopt extendedglob
 setopt nomatch
 setopt notify
 unsetopt beep
+unsetopt PROMPT_SP
 bindkey -e
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
@@ -42,11 +37,6 @@ bindkey  "^[[3~"  delete-char
 setopt interactivecomments
 # source ~/zsh_plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 source ~/zsh_plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/zsh_plugins/powerlevel10k/powerlevel10k.zsh-theme
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 # source files
 source ~/.config/shell/alias.sh
 source ~/.config/shell/env.sh
@@ -58,4 +48,18 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 preexec() { print -Pn "\e]2;$1\a" }
 precmd() { print -Pn "\e]2;%~\a" }
 
+# Custom prompt
+setopt PROMPT_SUBST
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:git:*' formats '[ %F{magenta}%b%f] '
+zstyle ':vcs_info:git:*' actionformats '[ %F{magenta}%b%f|%F{red}%a%f] '
+
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+
+# Directory (blue), git branch (magenta), prompt char (green/red based on exit code)
+PROMPT='%F{blue}%~%f ${vcs_info_msg_0_}%(?.%F{green}.%F{red})❯%f '
+
 . "$HOME/.local/share/../bin/env"
+

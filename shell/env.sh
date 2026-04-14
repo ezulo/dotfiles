@@ -8,7 +8,9 @@ else
     export EDITOR='nvim'
 fi
 
-export HYPRLAND_LOG_FILE="$XDG_RUNTIME_DIR/hypr/$(ls -t $XDG_RUNTIME_DIR/hypr/ | head -n 1)/hyprland.log"
+if [[ -d "$XDG_RUNTIME_DIR/hypr" ]]; then
+    export HYPRLAND_LOG_FILE="$XDG_RUNTIME_DIR/hypr/$(ls -t $XDG_RUNTIME_DIR/hypr/ | head -n 1)/hyprland.log"
+fi
 export KITTY_CONFIG_DIRECTORY=$HOME/.config/kitty
 export WAYBAR_CONFIG_DIRECTORY=$HOME/.config/waybar
 export HYPRPAPER_CONFIG_DIRECTORY=$HOME/.config/hypr
