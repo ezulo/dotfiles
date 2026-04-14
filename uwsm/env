@@ -1,24 +1,7 @@
 #!/bin/echo PleaseSource
 
-# XDG
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_CACHE_HOME="$HOME/.cache"
-
-# User executables
-export LOCAL_BIN_DIR="$HOME/.local/bin"
-
-# Path
-PATH+=":$LOCAL_BIN_DIR"
-PATH+=":$XDG_CONFIG_HOME/scripts"
-export PATH
-
-# Custom
-export THEME_HOME="$HOME/.config/theme"
-export ZMENU_INCLUDE_DIR="$XDG_CONFIG_HOME/.config/scripts/include"
-
-# Hyprland Configs (used in keybinds + theming scripts)
-export HYPRIDLE_CONFIG="$XDG_CONFIG_HOME/hypr/hypridle.conf"
-export HYPRLAND_CONFIG="$XDG_CONFIG_HOME/hypr/hyprland.conf"
-export HYPRLOCK_CONFIG="$XDG_CONFIG_HOME/hypr/hyprlock.conf"
-export HYPRPAPER_CONFIG="$XDG_CONFIG_HOME/hypr/hyprpaper.conf"
+# Source shared environment from environment.d (auto-export all variables)
+set -a
+. "$HOME/.config/environment.d/60-user.conf"
+set +a
 
