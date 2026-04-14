@@ -69,3 +69,12 @@ CLAUDE.md
 btop/
 cpplint/
 
+# zsh artifacts
+zsh/.zcompdump
+
+# environment
+environment.d/
+
+# noctalia theme files
+foot/colors.ini
+foot/themes/
