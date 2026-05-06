@@ -1,0 +1,6 @@
+[submodule "thirdparty/lain"]
+	path = thirdparty/lain
+	url = https://github.com/lcpz/lain.git
+[submodule "thirdparty/freedesktop"]
+	path = thirdparty/freedesktop
+	url = https://github.com/lcpz/awesome-freedesktop.git
