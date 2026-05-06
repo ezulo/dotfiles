@@ -1,0 +1,50 @@
+[env]
+TERM = "xterm-256color"
+
+[terminal.shell]
+program = "sh"
+args = ["-c", "clear && exec tmux"]
+
+[window]
+padding = { x = 12, y = 12 }
+resize_increments = false
+
+[font]
+size = 11
+
+[font.normal]
+family = "monospace"
+
+[colors.primary]
+background = "#0b0e14"
+foreground = "#d1d1c7"
+
+[colors.selection]
+text = "#0b0e14"
+background = "#e6b450"
+
+[colors.cursor]
+cursor = "#e6b450"
+text = "#0b0e14"
+
+[colors.normal]
+black   = "#0b0e14"
+red     = "#d95757"
+green   = "#aad94c"
+yellow  = "#e6b450"
+blue    = "#39bae6"
+magenta = "#d2a6ff"
+cyan    = "#39bae6"
+white   = "#d1d1c7"
+
+[colors.bright]
+black   = "#363a40"
+red     = "#f07178"
+green   = "#c2d94c"
+yellow  = "#ffb454"
+blue    = "#59c2ff"
+magenta = "#e6b0ff"
+cyan    = "#95e6cb"
+white   = "#f0f0f0"
+
+[terminal]
