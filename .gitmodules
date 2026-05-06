@@ -10,3 +10,9 @@
 	path = nvim
 	url = git@github.com:ezulo/neovim.git
 	branch = master
+[submodule "awesome/thirdparty/lain"]
+	path = awesome/thirdparty/lain
+	url = https://github.com/lcpz/lain.git
+[submodule "awesome/thirdparty/freedesktop"]
+	path = awesome/thirdparty/freedesktop
+	url = https://github.com/lcpz/awesome-freedesktop.git
