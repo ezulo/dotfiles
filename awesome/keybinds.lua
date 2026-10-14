@@ -60,6 +60,8 @@ M.globalkeys = gears.table.join(
   -- Standard program
   awful.key({ modkey }, "Return", function() awful.spawn(config.terminal) end,
     { description = "open a terminal", group = "launcher" }),
+  awful.key({ modkey }, "e", function() awful.spawn("dolphin") end,
+    { description = "open file manager", group = "launcher" }),
   awful.key({ modkey, "Control" }, "r", awesome.restart,
     { description = "reload awesome", group = "awesome" }),
   awful.key({ modkey, "Shift" }, "q", awesome.quit,
@@ -120,7 +122,25 @@ M.globalkeys = gears.table.join(
   end, { description = "lower volume", group = "media" }),
   awful.key({}, "XF86AudioMute", function()
     awful.spawn("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle")
-  end, { description = "toggle mute", group = "media" })
+  end, { description = "toggle mute", group = "media" }),
+
+  -- Brightness keys
+  awful.key({}, "XF86MonBrightnessUp", function()
+    awful.spawn("brightnessctl set 5%+")
+  end, { description = "increase brightness", group = "media" }),
+  awful.key({}, "XF86MonBrightnessDown", function()
+    awful.spawn("brightnessctl set 5%-")
+  end, { description = "decrease brightness", group = "media" }),
+
+  -- Pick color
+  awful.key({ modkey, "Control" }, "x", function()
+    awful.spawn("/home/eduardo/.config/scripts/pick-color")
+  end, { description = "pick a color with the mouse", group = "media" }),
+
+  -- Display hotplug
+  awful.key({ modkey }, "a", function()
+    awful.spawn("/usr/local/bin/display-hotplug")
+  end, { description = "reload display configuration", group = "screen" })
 )
 
 M.clientkeys = gears.table.join(

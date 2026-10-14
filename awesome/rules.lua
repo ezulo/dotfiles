@@ -1,5 +1,6 @@
 local awful = require("awful")
 local beautiful = require("beautiful")
+local gears = require("gears")
 
 local keybinds = require("keybinds")
 
@@ -60,4 +61,16 @@ awful.rules.rules = {
   -- Set Firefox to always map on the tag named "2" on screen 1.
   -- { rule = { class = "Firefox" },
   --   properties = { screen = 1, tag = "2" } },
+
+  -- SDL2 windows open on the currently focused screen
+  {
+    rule = { class = "bullet_game" },
+    callback = function(c)
+      local s = awful.screen.focused()
+      gears.timer.delayed_call(function()
+        c:move_to_screen(s)
+        awful.placement.centered(c, {parent = s})
+      end)
+    end
+  },
 }
